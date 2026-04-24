@@ -1,9 +1,9 @@
-# 🩸 Blood Donation Application
+#  Blood Donation Application
 
 ## 📌 Project Name
 **Blood Donation Application (B12-A11-C01)**
 
-## 🎯 Purpose
+##  Purpose
 The Blood Donation Application is a MERN stack based web platform designed to connect blood donors with recipients efficiently.  
 This system helps manage blood donation requests, donor profiles, and role-based dashboards (Admin, Donor, Volunteer) with a clean, recruiter-friendly UI and secure authentication.
 
@@ -11,13 +11,13 @@ This project is developed as part of **B12 A11 Category-01 Assignment** followin
 
 ---
 
-## 🌐 Live Website
-🔗 Front-end Live Link:  
-https://blood-donation-client-a11.netlify.app/
+##  Live Website
+ Front-end Live Link:  
+<!-- https://blood-donation-client-a11.netlify.app/ -->
 
 ---
 
-## 🧑‍🤝‍🧑 User Roles
+## 🧑‍🤝 User Roles
 
 ### 👤 Donor (Default)
 - Register & login
@@ -36,11 +36,11 @@ https://blood-donation-client-a11.netlify.app/
 - Manage all donation requests
 - View statistics (users, funds, donation requests)
 
-💡 *Admin role is assigned manually from the database.*
+ *Admin role is assigned manually from the database.*
 
 ---
 
-## 🔐 Authentication & Security
+##  Authentication & Security
 - Email & Password based authentication
 - JWT implemented for protecting private APIs
 - Firebase Authentication
@@ -49,35 +49,35 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## 🖥️ Key Features
+##  Key Features
 
-### ✅ Public Features
+###  Public Features
 - Home page with banner, featured section & contact form
 - Search donors by blood group, district & upazila
 - View all pending blood donation requests
 
-### 🔒 Private Dashboard Features
+###  Private Dashboard Features
 - Fully responsive sidebar dashboard
 - Profile management with edit & save toggle
 - Role-based access control
 
-#### 🩸 Donor Dashboard
+####  Donor Dashboard
 - Dashboard home with recent 3 donation requests
 - My Donation Requests page (pagination & filtering)
 - Create donation request (blocked users restricted)
 
-#### 🌐 Admin Dashboard
+####  Admin Dashboard
 - Statistics cards (total users, total funds, total donation requests)
 - All Users management
 - All Blood Donation Requests management
 
-#### 🤝 Volunteer Dashboard
+####  Volunteer Dashboard
 - View all donation requests
 - Update donation status only
 
 ---
 
-## 💰 Funding (Challenge Requirement)
+##  Funding (Challenge Requirement)
 - Private funding page
 - Stripe payment integration
 - Funding history table
@@ -85,7 +85,7 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## 🎨 UI & UX Highlights
+##  UI & UX Highlights
 - Unique, non-generic design (no gobindo UI)
 - Consistent color theme and typography
 - Fully responsive for mobile, tablet & desktop
@@ -94,7 +94,7 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## 📊 Additional Implementations
+##  Additional Implementations
 - Pagination where required
 - Filtering by status (users & donation requests)
 - Protected private routes (no redirect on reload)
@@ -102,7 +102,7 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Frontend
 - React
@@ -121,7 +121,7 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## 📦 NPM Packages Used
+##  NPM Packages Used
 - react-router-dom
 - firebase
 - axios
@@ -132,7 +132,7 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## 📤 Submission Info
+##  Submission Info
 
 **Admin Email:** admin@example.com  
 **Admin Password:** admin123  
@@ -143,7 +143,7 @@ https://blood-donation-client-a11.netlify.app/
 
 ---
 
-## ✅ Notes
+##  Notes
 - Minimum 20 meaningful commits on client side
 - Minimum 12 meaningful commits on server side
 - No project similarity with module/assignment work
