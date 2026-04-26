@@ -14,7 +14,7 @@
     "@headlessui/vue": "^1.7.23",
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/react-form": "^1.27.3",
-    "@tanstack/react-query": "^5.90.12",
+    "@tanstack/react-query": "^5.100.5",
     "@tanstack/react-query-devtools": "^5.91.1",
     "axios": "^1.13.2",
     "firebase": "^12.12.0",

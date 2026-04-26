@@ -24,7 +24,7 @@ const Funding = () => {
             headers: {
               authorization: `Bearer ${token}`,
             },
-          }
+          },
         );
 
         setFunds(data);
@@ -60,7 +60,7 @@ const Funding = () => {
           headers: {
             authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       window.location.href = data.url;
@@ -80,9 +80,7 @@ const Funding = () => {
     <div className="min-h-screen bg-red-50 px-4 py-10">
       <div className="max-w-5xl mx-auto bg-white p-8 rounded-3xl shadow-lg">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-          <h2 className="text-3xl font-bold text-red-700">
-            Funding History
-          </h2>
+          <h2 className="text-3xl font-bold text-red-700">Funding History</h2>
 
           <div className="flex gap-3">
             <input
@@ -103,9 +101,7 @@ const Funding = () => {
         </div>
 
         {funds.length === 0 ? (
-          <p className="text-center text-gray-500">
-            No funding history found
-          </p>
+          <p className="text-center text-gray-500">No funding history found</p>
         ) : (
           <div className="overflow-x-auto rounded-xl shadow">
             <table className="w-full">

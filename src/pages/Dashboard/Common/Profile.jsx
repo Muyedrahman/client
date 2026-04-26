@@ -5,7 +5,7 @@ import axios from "axios";
 
 import coverImg from "../../../assets/images/cover.jpg";
 import { toast } from "react-hot-toast";
-import { imageUploadCloudinary } from "../../../utils";
+import { imageUpload } from "../../../utils";
 
 const Profile = () => {
   const { user, setLoading } = useAuth();
@@ -51,8 +51,10 @@ const handleUpdate = async () => {
 
     // Only upload avatar if file selected
     if (avatarFile) {
-      const uploadedUrl = await imageUploadCloudinary(avatarFile);
-      updatedData.avatar = uploadedUrl;
+      // const uploadedUrl = await imageUploadCloudinary(avatarFile);
+      const uploadedUrl = await imageUpload(avatarFile);
+      // avatar;
+      updatedData.image  = uploadedUrl;
     }
 
     const res = await axios.patch(
@@ -81,7 +83,8 @@ const handleUpdate = async () => {
         <div className="flex flex-col items-center -mt-16 p-4">
           <div className="relative">
             <img
-              src={userData.avatar || userData.image || ""}
+              // src={userData.avatar || userData.image || ""}
+              src={userData?.image || ""}
               alt="profile"
               className="h-24 w-24 rounded-full border-2 border-white object-cover"
             />
@@ -146,7 +149,7 @@ const handleUpdate = async () => {
                     <option key={bg} value={bg}>
                       {bg}
                     </option>
-                  )
+                  ),
                 )}
               </select>
 

@@ -2,9 +2,10 @@ import { Link, useLoaderData, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-import { imageUploadCloudinary } from "../../utils";
+// import { imageUploadCloudinary } from "../../utils";
 import axios from "axios";
 import LoadingSpinner from './../../components/Shared/LoadingSpinner';
+import { imageUpload } from "../../utils";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(errors)
+  // console.log(errors)
 
   const selectedDistrict = watch("district");
 
@@ -36,20 +37,32 @@ const SignUp = () => {
       data;
 
     const imageFile = image[0];
-
+    // const imageFile = image?.[0];
+    // const formData = new FormData()
+    // formData.append('image', imageFile)
+    // console.log(formData)
+    
     try {
+      // data
+      // const res = await axios.post(
+      //   `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`,
+      //   formData,
+      // );
+      const imageURL = await imageUpload(imageFile);
+
       //1. User Registration
       const result = await createUser(email, password);
       //2. IMAGE upload
-      const cloudinaryImageUrl = await imageUploadCloudinary(imageFile);
-      console.log(cloudinaryImageUrl);
+      // const cloudinaryImageUrl = await imageUploadCloudinary(imageFile);
+      // console.log(cloudinaryImageUrl);
 
       // 4.save the data in db
+      // cloudinaryImageUrl
       try {
         const userInfo = {
           name,
           email,
-          image: cloudinaryImageUrl,
+          image: imageURL,
           blood_group: bloodGroup,
           district,
           upazila,
@@ -69,8 +82,8 @@ const SignUp = () => {
         console.log(error);
       }
 
-      //3. Save username & profile photo
-      await updateUserProfile(name, cloudinaryImageUrl);
+      //3. Save username & profile photo  +++++++++++ , cloudinaryImageUrl
+      await updateUserProfile(name, imageURL);
       console.log(result);
       // 5.Navigate part
       navigate(from, { replace: true });
@@ -123,6 +136,7 @@ const SignUp = () => {
           {/* Avatar (Image Upload) */}
           <input
             type="file"
+            placeholder="Enter Your"
             accept="image/*"
             {...register("image", { required: "Avatar is required" })}
             className="w-full border border-gray-300 rounded-lg px-4 py-3"
@@ -153,7 +167,10 @@ const SignUp = () => {
             placeholder="Password"
             {...register("password", {
               required: "Password is required",
-              minLength: 6,
+              minLength: {
+                value: 6,
+                message: "Password must be at least 6 characters",
+              },
             })}
             className="w-full border border-gray-300 rounded-lg px-4 py-3"
           />

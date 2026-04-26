@@ -14,7 +14,6 @@ import ManageOrders from "../pages/Dashboard/Seller/ManageOrders";
 import { createBrowserRouter } from "react-router";
 import DonationRequest from "../components/Shared/MenuLinks/DonationRequest";
 import Blog from "../components/Shared/MenuLinks/Blog";
-import Founding from "../components/Shared/MenuLinks/Founding";
 import MyDonationRequest from "../pages/Dashboard/Customer/MyDonationRequest";
 import SearchPage from "../components/Shared/Navbar/SearchPage";
 import DonationRequestDetails from "../components/Dashboard/DonationDetails/DonationRequestDetails";
@@ -22,7 +21,11 @@ import PaymentSuccess from "../components/Dashboard/Payment/PaymentSuccess";
 import DetailsJust from "../components/Dashboard/DonationDetails/DetailsJust";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import AdminRoute from "./AdminRoute";
-import Funding from "../components/Shared/MenuLinks/Founding";
+import Funding from "../pages/Dashboard/Common/Founding";
+
+
+
+
 
 export const router = createBrowserRouter([
   {
@@ -51,7 +54,7 @@ export const router = createBrowserRouter([
         path: "/founding",
         element: (
           <PrivateRoute>
-            <Founding></Founding>
+            <Funding></Funding>
           </PrivateRoute>
         ),
       },
@@ -94,7 +97,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "funding",
-        element: <Funding />,
+        element: <Funding></Funding>,
       },
       {
         path: "all-users/donation-details/:id",
