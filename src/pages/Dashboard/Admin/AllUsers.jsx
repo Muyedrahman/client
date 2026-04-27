@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const AllUsers = () => {
   const axiosSecure = useAxiosSecure();
   const [filter, setFilter] = useState("");
-
+// XSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   //  TanStack Query দিয়ে data fetch
   const {
     data: users = [],
@@ -63,7 +63,7 @@ const AllUsers = () => {
     if (result.isConfirmed) {
       try {
         await axiosSecure.patch(`/users/${id}/role`, { role });
-        refetch(); // ✅ Table refresh
+        refetch(); //  Table refresh
         Swal.fire("Done!", `User is now ${role}`, "success");
       } catch (error) {
         Swal.fire("Error!", "Something went wrong", "error");
@@ -127,7 +127,7 @@ const AllUsers = () => {
 
                 <td className="py-3 px-4">
                   <img
-                    src={user.avatar || "https://i.pravatar.cc/100"} // ✅ avatar
+                    src={user.avatar || "https://i.pravatar.cc/100"} //  avatar
                     alt={user.name}
                     className="w-10 h-10 rounded-full object-cover"
                   />

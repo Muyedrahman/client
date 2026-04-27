@@ -22,6 +22,9 @@ import DetailsJust from "../components/Dashboard/DonationDetails/DetailsJust";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import AdminRoute from "./AdminRoute";
 import Funding from "../pages/Dashboard/Common/Funding";
+import CreateDonationRequest from "../pages/Dashboard/Donor/CreateDonationRequest";
+import MyDonationRequests from "../pages/Dashboard/Donor/MyDonationRequests";
+
 
 
 
@@ -100,6 +103,16 @@ export const router = createBrowserRouter([
         path: "funding",
         element: <Funding></Funding>,
       },
+      // Donor
+      {
+        path: "create-donation-request",
+        element: <CreateDonationRequest />,
+      },
+      {
+        path: "my-donation-requests",
+        element: <MyDonationRequests />,
+      },
+      // Admin
       {
         path: "all-users/donation-details/:id",
         element: (
@@ -141,7 +154,16 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      // {
+      //   path: "/create-donation-request",
+      //   element: (
 
+      //       <CreateDonationRequest />
+
+      //   ),
+      // },
+
+      // xxxxxxxxxxxxxxxxxxxxxxxxx
       {
         path: "my-donation-request",
         element: (
