@@ -21,7 +21,8 @@ import PaymentSuccess from "../components/Dashboard/Payment/PaymentSuccess";
 import DetailsJust from "../components/Dashboard/DonationDetails/DetailsJust";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import AdminRoute from "./AdminRoute";
-import Funding from "../pages/Dashboard/Common/Founding";
+import Funding from "../pages/Dashboard/Common/Funding";
+
 
 
 
@@ -151,7 +152,7 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "all-users",
+        path: "all-AllUsers.jsx users",
         element: (
           <PrivateRoute>
             <AdminRoute>

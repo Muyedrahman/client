@@ -1,7 +1,9 @@
 [
   { "id": 1, "name": "Bagerhat", "upazilas": [
       { "id": 1, "name": "Bagerhat Sadar" },
-      { "id": 2, "name": "Mollahat" }
+      { "id": 2, "name": "Mollahat" },
+      { "id": 3, "name": "Chitalmari" },
+      { "id": 4, "name": "Fakirhat" }
   ]},
   { "id": 2, "name": "Bandarban", "upazilas": [
       { "id": 1, "name": "Bandarban Sadar" },
