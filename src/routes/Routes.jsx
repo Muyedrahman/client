@@ -24,6 +24,7 @@ import AdminRoute from "./AdminRoute";
 import Funding from "../pages/Dashboard/Common/Funding";
 import CreateDonationRequest from "../pages/Dashboard/Donor/CreateDonationRequest";
 import MyDonationRequests from "../pages/Dashboard/Donor/MyDonationRequests";
+import EditDonationRequest from "../pages/Dashboard/Donor/EditDonationRequest";
 
 
 
@@ -32,6 +33,7 @@ import MyDonationRequests from "../pages/Dashboard/Donor/MyDonationRequests";
 
 
 export const router = createBrowserRouter([
+  // ── Public Routes ──
   {
     path: "/",
     element: <MainLayout />,
@@ -76,6 +78,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  // ── Auth Routes ──
   {
     path: "/login",
     element: <Login />,
@@ -111,6 +114,10 @@ export const router = createBrowserRouter([
       {
         path: "my-donation-requests",
         element: <MyDonationRequests />,
+      },
+      {
+        path: "edit-donation-request/:id", //
+        element: <EditDonationRequest />,
       },
       // Admin
       {
@@ -183,6 +190,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      //Volunteer Route
     ],
   },
 ]);
