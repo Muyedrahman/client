@@ -122,7 +122,7 @@ export const router = createBrowserRouter([
         path: "edit-donation-request/:id", //
         element: <EditDonationRequest />,
       },
-      // Admin
+      // Admin  Only
       {
         path: "all-users",
         element: (
@@ -131,13 +131,13 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
-      // ✅ Admin + Volunteer একই route
+      // ✅ Admin + Volunteer দুজনেই যেতে পারবে
       {
         path: "all-blood-donation-request",
         element: (
-          // <VolunteerRoute>
+          <VolunteerRoute>
             <AllBloodDonationRequests />
-          // </VolunteerRoute>
+          </VolunteerRoute>
         ),
       },
 
@@ -157,14 +157,16 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "add-plant",
-        element: (
-          <PrivateRoute>
-            <AddPlant />
-          </PrivateRoute>
-        ),
-      },
+
+      // All Donation Requests
+      // {
+      //   path: "add-plant",
+      //   element: (
+      //     <PrivateRoute>
+      //       <AddPlant />
+      //     </PrivateRoute>
+      //   ),
+      // },
 
       {
         path: "all-users",
@@ -205,7 +207,9 @@ export const router = createBrowserRouter([
         path: "all-AllUsers.jsx users",
         element: (
           <PrivateRoute>
-            <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            <AdminRoute>
+              <AllUsers></AllUsers>
+            </AdminRoute>
           </PrivateRoute>
         ),
       },

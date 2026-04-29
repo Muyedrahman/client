@@ -23,7 +23,7 @@ const VolunteerHome = () => {
       {/* Welcome Section */}
       <div className="mb-6">
         <h2 className="text-2xl font-medium text-gray-800">
-          Welcome, {user?.displayName}! 🤝
+          Welcome, {user?.displayName}! 
         </h2>
         <p className="text-sm text-gray-500 mt-1">
           Help manage donation requests

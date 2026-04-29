@@ -19,7 +19,7 @@ const Navbar = () => {
           `${import.meta.env.VITE_API_URL}/users`
         );
         const result =data.map(d=>setImage(d.image))
-        setUsers(data); // 🔥 dynamic data
+        setUsers(data); //  dynamic data
         setLoading(false);
       } catch (error) {
         console.error(error);
