@@ -35,7 +35,7 @@ const PaymentSuccess = () => {
         );
 
         setSaved(true);
-        toast.success("Payment Successful 🎉");
+        toast.success("Payment Successful ");
 
         // setTimeout(() => {
         //   navigate("/funding");
@@ -60,7 +60,7 @@ const PaymentSuccess = () => {
         </div>
 
         <h2 className="text-2xl font-bold text-green-700 mb-2">Payment Successful!</h2>
-        <p className="text-gray-600 mb-4">Thank you for your contribution ❤️</p>
+        <p className="text-gray-600 mb-4">Thank you for your contribution </p>
 
         <div className="bg-green-50 rounded-xl p-4 text-left space-y-2">
           <p><span className="font-semibold">Name:</span> {displayName}</p>

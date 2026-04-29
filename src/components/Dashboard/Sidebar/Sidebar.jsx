@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; //  ঠিক করা
-
+import { Link } from "react-router";
 import logo from "../../../assets/images/logo (1).png";
-
 // Icons
 import { GrLogout } from "react-icons/gr";
 import { FcSettings } from "react-icons/fc";
@@ -12,15 +10,16 @@ import { MdDashboard } from "react-icons/md";
 // User Menu
 import MenuItem from "./Menu/MenuItem";
 import AdminMenu from "./Menu/AdminMenu";
-import VolunteerMenu from "./Menu/VolunteerMenu"; //  ঠিক করা
+import VolunteerMenu from "./Menu/VolunteerMenu";
 import DonorMenu from "./Menu/DonorMenu";
 
 import useAuth from "../../../hooks/useAuth";
 import useRole from "../../../hooks/useRole";
 import LoadingSpinner from "../../Shared/LoadingSpinner";
 
+
 const Sidebar = () => {
-  const { logOut } = useAuth(); //  শুধু logOut লাগবে
+  const { logOut } = useAuth();
   const [role, isRoleLoading] = useRole();
   const [isActive, setActive] = useState(false);
 
@@ -41,7 +40,6 @@ const Sidebar = () => {
             </Link>
           </div>
         </div>
-
         <button
           onClick={handleToggle}
           className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-200"
@@ -52,16 +50,17 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden 
-        bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform 
+        className={`z-10 md:fixed flex flex-col justify-between 
+        overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 
+        absolute inset-y-0 left-0 transform 
         ${isActive && "-translate-x-full"} 
         md:translate-x-0 transition duration-200 ease-in-out`}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div
-            className="w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg 
-          justify-center items-center bg-red-100 mx-auto"
+            className="w-full hidden md:flex px-4 py-2 shadow-lg 
+          rounded-lg justify-center items-center bg-red-100 mx-auto"
           >
             <Link to="/">
               <img src={logo} alt="logo" width="100" height="100" />
@@ -71,20 +70,17 @@ const Sidebar = () => {
           {/* Menu Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
-              {/* Dashboard - সবার জন্য */}
+              {/* ✅ Dashboard - সবার জন্য */}
               <MenuItem
                 icon={MdDashboard}
                 label="Dashboard"
                 address="/dashboard"
               />
-              {/* Role Based Menu */}
 
-              {/* {role === "donor" && <DonorMenu />} */}
-              <DonorMenu />
-              {/* {role === "volunteer" && <VolunteerMenu />}   */}
-              <VolunteerMenu />
-              {/* {role === "admin" && <AdminMenu />} */}
-              <AdminMenu />
+              {/* ✅ Role check করে menu দেখাবে */}
+              {role === "donor" && <DonorMenu />}
+              {role === "volunteer" && <VolunteerMenu />}
+              {role === "admin" && <AdminMenu />}
             </nav>
           </div>
 
@@ -98,9 +94,9 @@ const Sidebar = () => {
             />
             <button
               onClick={logOut}
-              className="flex cursor-pointer w-full items-center px-4 py-2 
-              mt-5 text-gray-600 hover:bg-gray-300 hover:text-gray-700 
-              transition-colors duration-300 transform"
+              className="flex cursor-pointer w-full items-center 
+              px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300 
+              hover:text-gray-700 transition-colors duration-300 transform"
             >
               <GrLogout className="w-5 h-5" />
               <span className="mx-4 font-medium">Logout</span>

@@ -19,12 +19,15 @@ import SearchPage from "../components/Shared/Navbar/SearchPage";
 import DonationRequestDetails from "../components/Dashboard/DonationDetails/DonationRequestDetails";
 import PaymentSuccess from "../components/Dashboard/Payment/PaymentSuccess";
 import DetailsJust from "../components/Dashboard/DonationDetails/DetailsJust";
-import AllUsers from "../pages/Dashboard/Admin/AllUsers";
+// import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import AdminRoute from "./AdminRoute";
 import Funding from "../pages/Dashboard/Common/Funding";
 import CreateDonationRequest from "../pages/Dashboard/Donor/CreateDonationRequest";
 import MyDonationRequests from "../pages/Dashboard/Donor/MyDonationRequests";
 import EditDonationRequest from "../pages/Dashboard/Donor/EditDonationRequest";
+import AllUsers from "../pages/Dashboard/Admin/AllUsers";
+import VolunteerRoute from "./VolunteerRoute";
+import AllBloodDonationRequests from "../pages/Dashboard/Admin/AllBloodDonationRequests";
 
 
 
@@ -121,6 +124,24 @@ export const router = createBrowserRouter([
       },
       // Admin
       {
+        path: "all-users",
+        element: (
+          <AdminRoute>
+            <AllUsers />
+          </AdminRoute>
+        ),
+      },
+      // ✅ Admin + Volunteer একই route
+      {
+        path: "all-blood-donation-request",
+        element: (
+          // <VolunteerRoute>
+            <AllBloodDonationRequests />
+          // </VolunteerRoute>
+        ),
+      },
+
+      {
         path: "all-users/donation-details/:id",
         element: (
           <PrivateRoute>
@@ -184,9 +205,7 @@ export const router = createBrowserRouter([
         path: "all-AllUsers.jsx users",
         element: (
           <PrivateRoute>
-            <AdminRoute>
-              <AllUsers></AllUsers>
-            </AdminRoute>
+            <AdminRoute><AllUsers></AllUsers></AdminRoute>
           </PrivateRoute>
         ),
       },

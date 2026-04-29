@@ -203,7 +203,13 @@
   ]},
   { "id": 51, "name": "Patuakhali", "upazilas": [
       { "id": 1, "name": "Patuakhali Sadar" },
-      { "id": 2, "name": "Kalapara" }
+      { "id": 2, "name": "Kalapara" },
+      { "id": 3, "name": "Bauphal" },
+      { "id": 4, "name": "Dashmina"},
+      { "id": 5, "name": "Galachipa"},
+      { "id": 6, "name": "Mirzaganj"},
+      { "id": 7, "name": "Dumki"},
+      { "id": 8, "name": "Rangabali"}
   ]},
   { "id": 52, "name": "Pirojpur", "upazilas": [
       { "id": 1, "name": "Pirojpur Sadar" },
