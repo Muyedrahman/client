@@ -6,40 +6,121 @@
       { "id": 4, "name": "Fakirhat" }
   ]},
   { "id": 2, "name": "Bandarban", "upazilas": [
-      { "id": 1, "name": "Bandarban Sadar" },
-      { "id": 2, "name": "Thanchi" }
+    { "id": 1, "name": "Bandarban Sadar" },
+    { "id": 2, "name": "Thanchi" },
+    { "id": 3, "name": "Alikadam" },
+    { "id": 4, "name": "Naikhongchhari" },
+    { "id": 5, "name": "Rowangchhari" },
+    { "id": 6, "name": "Ruma" },
+    { "id": 7, "name": "Lama" }
   ]},
   { "id": 3, "name": "Barguna", "upazilas": [
-      { "id": 1, "name": "Barguna Sadar" },
-      { "id": 2, "name": "Amtali" }
+    { "id": 1, "name": "Barguna Sadar" },
+    { "id": 2, "name": "Amtali" },
+    { "id": 3, "name": "Bamna" },
+    { "id": 4, "name": "Betagi" },
+    { "id": 5, "name": "Patharghata" },
+    { "id": 6, "name": "Taltali" }
   ]},
   { "id": 4, "name": "Barishal", "upazilas": [
-      { "id": 1, "name": "Barishal Sadar" },
-      { "id": 2, "name": "Bakerganj" }
+    { "id": 1, "name": "Barishal Sadar" },
+    { "id": 2, "name": "Bakerganj" },
+    { "id": 3, "name": "Babuganj" },
+    { "id": 4, "name": "Banaripara" },
+    { "id": 5, "name": "Gaurnadi" },
+    { "id": 6, "name": "Hizla" },
+    { "id": 7, "name": "Mehendiganj" },
+    { "id": 8, "name": "Muladi" },
+    { "id": 9, "name": "Wazirpur" },
+    { "id": 10, "name": "Agailjhara" }
   ]},
-  { "id": 5, "name": "Bhola", "upazilas": [
+ 
+  {
+    "id": 5,
+    "name": "Bhola",
+    "upazilas": [
       { "id": 1, "name": "Bhola Sadar" },
-      { "id": 2, "name": "Charfasson" }
-  ]},
-  { "id": 6, "name": "Bogura", "upazilas": [
+      { "id": 2, "name": "Charfasson" },
+      { "id": 3, "name": "Burhanuddin" },
+      { "id": 4, "name": "Daulatkhan" },
+      { "id": 5, "name": "Lalmohan" },
+      { "id": 6, "name": "Manpura" },
+      { "id": 7, "name": "Tazumuddin" }
+    ]},
+  {
+    "id": 6,
+    "name": "Bogura",
+    "upazilas": [
       { "id": 1, "name": "Bogura Sadar" },
-      { "id": 2, "name": "Shibganj" }
-  ]},
-  { "id": 7, "name": "Brahmanbaria", "upazilas": [
+      { "id": 2, "name": "Shibganj" },
+      { "id": 3, "name": "Adamdighi" },
+      { "id": 4, "name": "Dhunat" },
+      { "id": 5, "name": "Dhupchanchia" },
+      { "id": 6, "name": "Gabtali" },
+      { "id": 7, "name": "Kahaloo" },
+      { "id": 8, "name": "Nandigram" },
+      { "id": 9, "name": "Sariakandi" },
+      { "id": 10, "name": "Sherpur" },
+      { "id": 11, "name": "Sonatola" },
+      { "id": 12, "name": "Shajahanpur" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Brahmanbaria",
+    "upazilas": [
       { "id": 1, "name": "Brahmanbaria Sadar" },
-      { "id": 2, "name": "Ashuganj" }
-  ]},
-  { "id": 8, "name": "Chandpur", "upazilas": [
+      { "id": 2, "name": "Ashuganj" },
+      { "id": 3, "name": "Akhaura" },
+      { "id": 4, "name": "Bancharampur" },
+      { "id": 5, "name": "Bijoynagar" },
+      { "id": 6, "name": "Kasba" },
+      { "id": 7, "name": "Nabinagar" },
+      { "id": 8, "name": "Nasirnagar" },
+      { "id": 9, "name": "Sarail" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Chandpur",
+    "upazilas": [
       { "id": 1, "name": "Chandpur Sadar" },
-      { "id": 2, "name": "Hajiganj" }
-  ]},
-  { "id": 9, "name": "Chapai Nawabganj", "upazilas": [
+      { "id": 2, "name": "Hajiganj" },
+      { "id": 3, "name": "Faridganj" },
+      { "id": 4, "name": "Haimchar" },
+      { "id": 5, "name": "Kachua" },
+      { "id": 6, "name": "Matlab Uttar" },
+      { "id": 7, "name": "Matlab Dakshin" },
+      { "id": 8, "name": "Shahrasti" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Chapai Nawabganj",
+    "upazilas": [
       { "id": 1, "name": "Chapai Nawabganj Sadar" },
-      { "id": 2, "name": "Shibganj" }
-  ]},
+      { "id": 2, "name": "Shibganj" },
+      { "id": 3, "name": "Bholahat" },
+      { "id": 4, "name": "Gomastapur" },
+      { "id": 5, "name": "Nachole" }
+    ]
+  },
   { "id": 10, "name": "Chattogram", "upazilas": [
-      { "id": 1, "name": "Patiya" },
-      { "id": 2, "name": "Sitakunda" }
+    { "id": 1, "name": "Anwara" },
+    { "id": 2, "name": "Banshkhali" },
+    { "id": 3, "name": "Boalkhali" },
+    { "id": 4, "name": "Chandanaish" },
+    { "id": 5, "name": "Fatickchhari" },
+    { "id": 6, "name": "Hathazari" },
+    { "id": 7, "name": "Lohagara" },
+    { "id": 8, "name": "Mirsharai" },
+    { "id": 9, "name": "Patiya" },
+    { "id": 10, "name": "Rangunia" },
+    { "id": 11, "name": "Raozan" },
+    { "id": 12, "name": "Sandwip" },
+    { "id": 13, "name": "Satkania" },
+    { "id": 14, "name": "Sitakunda" },
+    { "id": 15, "name": "Karnafuli" }
   ]},
   { "id": 11, "name": "Chuadanga", "upazilas": [
       { "id": 1, "name": "Chuadanga Sadar" },
@@ -54,153 +135,484 @@
       { "id": 2, "name": "Burichong" }
   ]},
   { "id": 14, "name": "Dhaka", "upazilas": [
-      { "id": 1, "name": "Dhamrai" },
-      { "id": 2, "name": "Savar" }
+    { "id": 1, "name": "Dhamrai" },
+    { "id": 2, "name": "Dohar" },
+    { "id": 3, "name": "Keraniganj" },
+    { "id": 4, "name": "Nawabganj" },
+    { "id": 5, "name": "Savar" }
   ]},
-  { "id": 15, "name": "Dinajpur", "upazilas": [
+
+  {
+    "id": 15,
+    "name": "Dinajpur",
+    "upazilas": [
       { "id": 1, "name": "Dinajpur Sadar" },
-      { "id": 2, "name": "Birganj" }
-  ]},
-  { "id": 16, "name": "Faridpur", "upazilas": [
+      { "id": 2, "name": "Birganj" },
+      { "id": 3, "name": "Biral" },
+      { "id": 4, "name": "Bochaganj" },
+      { "id": 5, "name": "Chirirbandar" },
+      { "id": 6, "name": "Phulbari" },
+      { "id": 7, "name": "Ghoraghat" },
+      { "id": 8, "name": "Hakimpur" },
+      { "id": 9, "name": "Kaharole" },
+      { "id": 10, "name": "Khansama" },
+      { "id": 11, "name": "Nawabganj" },
+      { "id": 12, "name": "Parbatipur" }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Faridpur",
+    "upazilas": [
       { "id": 1, "name": "Faridpur Sadar" },
-      { "id": 2, "name": "Bhanga" }
-  ]},
-  { "id": 17, "name": "Feni", "upazilas": [
+      { "id": 2, "name": "Bhanga" },
+      { "id": 3, "name": "Alfadanga" },
+      { "id": 4, "name": "Boalmari" },
+      { "id": 5, "name": "Charbhadrasan" },
+      { "id": 6, "name": "Madhukhali" },
+      { "id": 7, "name": "Nagarkanda" },
+      { "id": 8, "name": "Sadarpur" },
+      { "id": 9, "name": "Saltha" }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Feni",
+    "upazilas": [
       { "id": 1, "name": "Feni Sadar" },
-      { "id": 2, "name": "Chhagalnaiya" }
-  ]},
-  { "id": 18, "name": "Gaibandha", "upazilas": [
+      { "id": 2, "name": "Chhagalnaiya" },
+      { "id": 3, "name": "Daganbhuiyan" },
+      { "id": 4, "name": "Parshuram" },
+      { "id": 5, "name": "Fulgazi" },
+      { "id": 6, "name": "Sonagazi" }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Gaibandha",
+    "upazilas": [
       { "id": 1, "name": "Gaibandha Sadar" },
-      { "id": 2, "name": "Palashbari" }
-  ]},
-  { "id": 19, "name": "Gazipur", "upazilas": [
+      { "id": 2, "name": "Palashbari" },
+      { "id": 3, "name": "Phulchhari" },
+      { "id": 4, "name": "Gobindaganj" },
+      { "id": 5, "name": "Sadullapur" },
+      { "id": 6, "name": "Saghata" },
+      { "id": 7, "name": "Sundarganj" }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Gazipur",
+    "upazilas": [
       { "id": 1, "name": "Gazipur Sadar" },
-      { "id": 2, "name": "Sreepur" }
-  ]},
-  { "id": 20, "name": "Gopalganj", "upazilas": [
+      { "id": 2, "name": "Sreepur" },
+      { "id": 3, "name": "Kaliakair" },
+      { "id": 4, "name": "Kaliganj" },
+      { "id": 5, "name": "Kapasia" }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Gopalganj",
+    "upazilas": [
       { "id": 1, "name": "Gopalganj Sadar" },
-      { "id": 2, "name": "Tungipara" }
-  ]},
-  { "id": 21, "name": "Habiganj", "upazilas": [
+      { "id": 2, "name": "Tungipara" },
+      { "id": 3, "name": "Kashiani" },
+      { "id": 4, "name": "Kotalipara" },
+      { "id": 5, "name": "Muksudpur" }
+    ]},
+  {
+    "id": 21,
+    "name": "Habiganj",
+    "upazilas": [
       { "id": 1, "name": "Habiganj Sadar" },
-      { "id": 2, "name": "Bahubal" }
-  ]},
-  { "id": 22, "name": "Jamalpur", "upazilas": [
+      { "id": 2, "name": "Bahubal" },
+      { "id": 3, "name": "Ajmiriganj" },
+      { "id": 4, "name": "Baniyachong" },
+      { "id": 5, "name": "Chunarughat" },
+      { "id": 6, "name": "Lakhai" },
+      { "id": 7, "name": "Madhabpur" },
+      { "id": 8, "name": "Nabiganj" },
+      { "id": 9, "name": "Sayestaganj" }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Jamalpur",
+    "upazilas": [
       { "id": 1, "name": "Jamalpur Sadar" },
-      { "id": 2, "name": "Melandaha" }
-  ]},
-  { "id": 23, "name": "Jashore", "upazilas": [
+      { "id": 2, "name": "Melandaha" },
+      { "id": 3, "name": "Bakshiganj" },
+      { "id": 4, "name": "Dewanganj" },
+      { "id": 5, "name": "Islampur" },
+      { "id": 6, "name": "Madarganj" },
+      { "id": 7, "name": "Sarishabari" }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Jashore",
+    "upazilas": [
       { "id": 1, "name": "Jessore Sadar" },
-      { "id": 2, "name": "Bagherpara" }
-  ]},
-  { "id": 24, "name": "Jhalokathi", "upazilas": [
+      { "id": 2, "name": "Bagherpara" },
+      { "id": 3, "name": "Abhaynagar" },
+      { "id": 4, "name": "Chaugacha" },
+      { "id": 5, "name": "Jhikargacha" },
+      { "id": 6, "name": "Keshabpur" },
+      { "id": 7, "name": "Manirampur" },
+      { "id": 8, "name": "Sharsha" }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Jhalokathi",
+    "upazilas": [
       { "id": 1, "name": "Jhalokathi Sadar" },
-      { "id": 2, "name": "Nalchity" }
-  ]},
-  { "id": 25, "name": "Jhenaidah", "upazilas": [
+      { "id": 2, "name": "Nalchity" },
+      { "id": 3, "name": "Kathalia" },
+      { "id": 4, "name": "Rajapur" }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Jhenaidah",
+    "upazilas": [
       { "id": 1, "name": "Jhenaidah Sadar" },
-      { "id": 2, "name": "Kotchandpur" }
-  ]},
-  { "id": 26, "name": "Joypurhat", "upazilas": [
+      { "id": 2, "name": "Kotchandpur" },
+      { "id": 3, "name": "Harinakunda" },
+      { "id": 4, "name": "Kaliganj" },
+      { "id": 5, "name": "Maheshpur" },
+      { "id": 6, "name": "Shailkupa" }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Joypurhat",
+    "upazilas": [
       { "id": 1, "name": "Joypurhat Sadar" },
-      { "id": 2, "name": "Kalai" }
-  ]},
-  { "id": 27, "name": "Khagrachari", "upazilas": [
+      { "id": 2, "name": "Kalai" },
+      { "id": 3, "name": "Akkelpur" },
+      { "id": 4, "name": "Khetlal" },
+      { "id": 5, "name": "Panchbibi" }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Khagrachari",
+    "upazilas": [
       { "id": 1, "name": "Khagrachhari Sadar" },
-      { "id": 2, "name": "Mahalchhari" }
-  ]},
-  { "id": 28, "name": "Khulna", "upazilas": [
+      { "id": 2, "name": "Mahalchhari" },
+      { "id": 3, "name": "Dighinala" },
+      { "id": 4, "name": "Lakshmichhari" },
+      { "id": 5, "name": "Manikchhari" },
+      { "id": 6, "name": "Matiranga" },
+      { "id": 7, "name": "Panchhari" },
+      { "id": 8, "name": "Ramgarh" },
+      { "id": 9, "name": "Guisamara" }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Khulna",
+    "upazilas": [
       { "id": 1, "name": "Khulna Sadar" },
-      { "id": 2, "name": "Dumuria" }
-  ]},
-  { "id": 29, "name": "Kishoreganj", "upazilas": [
+      { "id": 2, "name": "Dumuria" },
+      { "id": 3, "name": "Batiaghata" },
+      { "id": 4, "name": "Dacope" },
+      { "id": 5, "name": "Dighalia" },
+      { "id": 6, "name": "Koyra" },
+      { "id": 7, "name": "Paikgacha" },
+      { "id": 8, "name": "Phultala" },
+      { "id": 9, "name": "Rupsha" },
+      { "id": 10, "name": "Terokhada" }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Kishoreganj",
+    "upazilas": [
       { "id": 1, "name": "Kishoreganj Sadar" },
-      { "id": 2, "name": "Bhairab" }
-  ]},
-  { "id": 30, "name": "Kurigram", "upazilas": [
+      { "id": 2, "name": "Bhairab" },
+      { "id": 3, "name": "Austagram" },
+      { "id": 4, "name": "Bajitpur" },
+      { "id": 5, "name": "Hossainpur" },
+      { "id": 6, "name": "Itna" },
+      { "id": 7, "name": "Karimganj" },
+      { "id": 8, "name": "Katiadi" },
+      { "id": 9, "name": "Kuliarchar" },
+      { "id": 10, "name": "Mithamain" },
+      { "id": 11, "name": "Nikli" },
+      { "id": 12, "name": "Pakundia" },
+      { "id": 13, "name": "Tarail" }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Kurigram",
+    "upazilas": [
       { "id": 1, "name": "Kurigram Sadar" },
-      { "id": 2, "name": "Ulipur" }
-  ]},
-  { "id": 31, "name": "Kushtia", "upazilas": [
+      { "id": 2, "name": "Ulipur" },
+      { "id": 3, "name": "Bhurungamari" },
+      { "id": 4, "name": "Chilmari" },
+      { "id": 5, "name": "Phulbari" },
+      { "id": 6, "name": "Nageshwari" },
+      { "id": 7, "name": "Rajarhat" },
+      { "id": 8, "name": "Rajibpur" },
+      { "id": 9, "name": "Rowmari" }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Kushtia",
+    "upazilas": [
       { "id": 1, "name": "Kushtia Sadar" },
-      { "id": 2, "name": "Kumarkhali" }
-  ]},
-  { "id": 32, "name": "Lakshmipur", "upazilas": [
+      { "id": 2, "name": "Kumarkhali" },
+      { "id": 3, "name": "Bheramara" },
+      { "id": 4, "name": "Daulatpur" },
+      { "id": 5, "name": "Khoksa" },
+      { "id": 6, "name": "Mirpur" }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Lakshmipur",
+    "upazilas": [
       { "id": 1, "name": "Lakshmipur Sadar" },
-      { "id": 2, "name": "Ramganj" }
-  ]},
-  { "id": 33, "name": "Lalmonirhat", "upazilas": [
+      { "id": 2, "name": "Ramganj" },
+      { "id": 3, "name": "Kamalnagar" },
+      { "id": 4, "name": "Raipur" },
+      { "id": 5, "name": "Ramgati" }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Lalmonirhat",
+    "upazilas": [
       { "id": 1, "name": "Lalmonirhat Sadar" },
-      { "id": 2, "name": "Hatibandha" }
-  ]},
-  { "id": 34, "name": "Madaripur", "upazilas": [
+      { "id": 2, "name": "Hatibandha" },
+      { "id": 3, "name": "Aditmari" },
+      { "id": 4, "name": "Kaliganj" },
+      { "id": 5, "name": "Patgram" }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Madaripur",
+    "upazilas": [
       { "id": 1, "name": "Madaripur Sadar" },
-      { "id": 2, "name": "Rajoir" }
-  ]},
-  { "id": 35, "name": "Magura", "upazilas": [
+      { "id": 2, "name": "Rajoir" },
+      { "id": 3, "name": "Kalkini" },
+      { "id": 4, "name": "Shibchar" }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Magura",
+    "upazilas": [
       { "id": 1, "name": "Magura Sadar" },
-      { "id": 2, "name": "Mohammadpur" }
-  ]},
-  { "id": 36, "name": "Manikganj", "upazilas": [
+      { "id": 2, "name": "Mohammadpur" },
+      { "id": 3, "name": "Shalikha" },
+      { "id": 4, "name": "Sreepur" }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Manikganj",
+    "upazilas": [
       { "id": 1, "name": "Manikganj Sadar" },
-      { "id": 2, "name": "Singair" }
-  ]},
-  { "id": 37, "name": "Meherpur", "upazilas": [
+      { "id": 2, "name": "Singair" },
+      { "id": 3, "name": "Daulatpur" },
+      { "id": 4, "name": "Ghior" },
+      { "id": 5, "name": "Harirampur" },
+      { "id": 6, "name": "Saturia" },
+      { "id": 7, "name": "Shibalaya" }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Meherpur",
+    "upazilas": [
       { "id": 1, "name": "Meherpur Sadar" },
-      { "id": 2, "name": "Gangni" }
-  ]},
-  { "id": 38, "name": "Moulvibazar", "upazilas": [
+      { "id": 2, "name": "Gangni" },
+      { "id": 3, "name": "Mujibnagar" }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Moulvibazar",
+    "upazilas": [
       { "id": 1, "name": "Moulvibazar Sadar" },
-      { "id": 2, "name": "Sreemangal" }
-  ]},
-  { "id": 39, "name": "Munshiganj", "upazilas": [
+      { "id": 2, "name": "Sreemangal" },
+      { "id": 3, "name": "Barlekha" },
+      { "id": 4, "name": "Juri" },
+      { "id": 5, "name": "Kamalganj" },
+      { "id": 6, "name": "Kulaura" },
+      { "id": 7, "name": "Rajnagar" }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Munshiganj",
+    "upazilas": [
       { "id": 1, "name": "Munshiganj Sadar" },
-      { "id": 2, "name": "Sirajdikhan" }
-  ]},
-  { "id": 40, "name": "Mymensingh", "upazilas": [
+      { "id": 2, "name": "Sirajdikhan" },
+      { "id": 3, "name": "Gazaria" },
+      { "id": 4, "name": "Lohajang" },
+      { "id": 5, "name": "Sreenagar" },
+      { "id": 6, "name": "Tongibari" }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Mymensingh",
+    "upazilas": [
       { "id": 1, "name": "Mymensingh Sadar" },
-      { "id": 2, "name": "Muktagacha" }
-  ]},
-  { "id": 41, "name": "Naogaon", "upazilas": [
+      { "id": 2, "name": "Muktagacha" },
+      { "id": 3, "name": "Bhaluka" },
+      { "id": 4, "name": "Dhobaura" },
+      { "id": 5, "name": "Fulbaria" },
+      { "id": 6, "name": "Gaffargaon" },
+      { "id": 7, "name": "Gauripur" },
+      { "id": 8, "name": "Haluaghat" },
+      { "id": 9, "name": "Ishwarganj" },
+      { "id": 10, "name": "Nandail" },
+      { "id": 11, "name": "Phulpur" },
+      { "id": 12, "name": "Trishal" },
+      { "id": 13, "name": "Tara Khanda" }
+    ]
+  },
+
+  {
+    "id": 41,
+    "name": "Naogaon",
+    "upazilas": [
       { "id": 1, "name": "Naogaon Sadar" },
-      { "id": 2, "name": "Badalgachhi" }
-  ]},
-  { "id": 42, "name": "Narail", "upazilas": [
+      { "id": 2, "name": "Badalgachhi" },
+      { "id": 3, "name": "Atrai" },
+      { "id": 4, "name": "Dhamoirhat" },
+      { "id": 5, "name": "Manda" },
+      { "id": 6, "name": "Mahadevpur" },
+      { "id": 7, "name": "Niamatpur" },
+      { "id": 8, "name": "Patnitala" },
+      { "id": 9, "name": "Porsha" },
+      { "id": 10, "name": "Raninagar" },
+      { "id": 11, "name": "Sapahar" }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Narail",
+    "upazilas": [
       { "id": 1, "name": "Narail Sadar" },
-      { "id": 2, "name": "Kalia" }
-  ]},
-  { "id": 43, "name": "Narayanganj", "upazilas": [
+      { "id": 2, "name": "Kalia" },
+      { "id": 3, "name": "Lohagara" }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Narayanganj",
+    "upazilas": [
       { "id": 1, "name": "Sonargaon" },
-      { "id": 2, "name": "Araihazar" }
-  ]},
-  { "id": 44, "name": "Narsingdi", "upazilas": [
+      { "id": 2, "name": "Araihazar" },
+      { "id": 3, "name": "Bandar" },
+      { "id": 4, "name": "Narayanganj Sadar" },
+      { "id": 5, "name": "Rupganj" }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Narsingdi",
+    "upazilas": [
       { "id": 1, "name": "Narsingdi Sadar" },
-      { "id": 2, "name": "Monohardi" }
-  ]},
-  { "id": 45, "name": "Natore", "upazilas": [
+      { "id": 2, "name": "Monohardi" },
+      { "id": 3, "name": "Belabo" },
+      { "id": 4, "name": "Palash" },
+      { "id": 5, "name": "Raipura" },
+      { "id": 6, "name": "Shibpur" }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Natore",
+    "upazilas": [
       { "id": 1, "name": "Natore Sadar" },
-      { "id": 2, "name": "Singra" }
-  ]},
-  { "id": 46, "name": "Netrokona", "upazilas": [
+      { "id": 2, "name": "Singra" },
+      { "id": 3, "name": "Bagatipara" },
+      { "id": 4, "name": "Baraigram" },
+      { "id": 5, "name": "Gurudaspur" },
+      { "id": 6, "name": "Lalpur" },
+      { "id": 7, "name": "Naldanga" }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Netrokona",
+    "upazilas": [
       { "id": 1, "name": "Netrokona Sadar" },
-      { "id": 2, "name": "Khaliajuri" }
-  ]},
-  { "id": 47, "name": "Nilphamari", "upazilas": [
+      { "id": 2, "name": "Khaliajuri" },
+      { "id": 3, "name": "Atpara" },
+      { "id": 4, "name": "Barhatta" },
+      { "id": 5, "name": "Durgapur" },
+      { "id": 6, "name": "Kalmakanda" },
+      { "id": 7, "name": "Kendua" },
+      { "id": 8, "name": "Madan" },
+      { "id": 9, "name": "Mohanganj" },
+      { "id": 10, "name": "Purbadhala" }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Nilphamari",
+    "upazilas": [
       { "id": 1, "name": "Nilphamari Sadar" },
-      { "id": 2, "name": "Jaldhaka" }
-  ]},
-  { "id": 48, "name": "Noakhali", "upazilas": [
+      { "id": 2, "name": "Jaldhaka" },
+      { "id": 3, "name": "Dimla" },
+      { "id": 4, "name": "Domar" },
+      { "id": 5, "name": "Kishoreganj" },
+      { "id": 6, "name": "Saidpur" }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Noakhali",
+    "upazilas": [
       { "id": 1, "name": "Begumganj" },
-      { "id": 2, "name": "Chatkhil" }
-  ]},
-  { "id": 49, "name": "Pabna", "upazilas": [
+      { "id": 2, "name": "Chatkhil" },
+      { "id": 3, "name": "Companiganj" },
+      { "id": 4, "name": "Hatiya" },
+      { "id": 5, "name": "Senbagh" },
+      { "id": 6, "name": "Sonaimuri" },
+      { "id": 7, "name": "Subarnachar" },
+      { "id": 8, "name": "Noakhali Sadar" },
+      { "id": 9, "name": "Kabirhat" }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Pabna",
+    "upazilas": [
       { "id": 1, "name": "Pabna Sadar" },
-      { "id": 2, "name": "Ishwardi" }
-  ]},
-  { "id": 50, "name": "Panchagarh", "upazilas": [
+      { "id": 2, "name": "Ishwardi" },
+      { "id": 3, "name": "Atgharia" },
+      { "id": 4, "name": "Bera" },
+      { "id": 5, "name": "Bhangura" },
+      { "id": 6, "name": "Chatmohar" },
+      { "id": 7, "name": "Faridpur" },
+      { "id": 8, "name": "Santhia" },
+      { "id": 9, "name": "Sujanagar" }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Panchagarh",
+    "upazilas": [
       { "id": 1, "name": "Panchagarh Sadar" },
-      { "id": 2, "name": "Tetulia" }
-  ]},
+      { "id": 2, "name": "Tetulia" },
+      { "id": 3, "name": "Atwari" },
+      { "id": 4, "name": "Boda" },
+      { "id": 5, "name": "Debiganj" }
+    ]
+  },
   { "id": 51, "name": "Patuakhali", "upazilas": [
       { "id": 1, "name": "Patuakhali Sadar" },
       { "id": 2, "name": "Kalapara" },
@@ -211,56 +623,178 @@
       { "id": 7, "name": "Dumki"},
       { "id": 8, "name": "Rangabali"}
   ]},
-  { "id": 52, "name": "Pirojpur", "upazilas": [
+
+  {
+    "id": 52,
+    "name": "Pirojpur",
+    "upazilas": [
       { "id": 1, "name": "Pirojpur Sadar" },
-      { "id": 2, "name": "Zianagar" }
-  ]},
-  { "id": 53, "name": "Rajbari", "upazilas": [
+      { "id": 2, "name": "Indurkani" },
+      { "id": 3, "name": "Bhandaria" },
+      { "id": 4, "name": "Kawkhali" },
+      { "id": 5, "name": "Mathbaria" },
+      { "id": 6, "name": "Nazirpur" },
+      { "id": 7, "name": "Nesarabad" }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Rajbari",
+    "upazilas": [
       { "id": 1, "name": "Rajbari Sadar" },
-      { "id": 2, "name": "Goalanda" }
-  ]},
-  { "id": 54, "name": "Rajshahi", "upazilas": [
+      { "id": 2, "name": "Goalanda" },
+      { "id": 3, "name": "Baliakandi" },
+      { "id": 4, "name": "Kalukhali" },
+      { "id": 5, "name": "Pangsha" }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Rajshahi",
+    "upazilas": [
       { "id": 1, "name": "Paba" },
-      { "id": 2, "name": "Godagari" }
-  ]},
-  { "id": 55, "name": "Rangamati", "upazilas": [
+      { "id": 2, "name": "Godagari" },
+      { "id": 3, "name": "Bagha" },
+      { "id": 4, "name": "Bagmara" },
+      { "id": 5, "name": "Charghat" },
+      { "id": 6, "name": "Durgapur" },
+      { "id": 7, "name": "Mohanpur" },
+      { "id": 8, "name": "Puthia" },
+      { "id": 9, "name": "Tanore" }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Rangamati",
+    "upazilas": [
       { "id": 1, "name": "Rangamati Sadar" },
-      { "id": 2, "name": "Baghaichhari" }
-  ]},
-  { "id": 56, "name": "Rangpur", "upazilas": [
+      { "id": 2, "name": "Baghaichhari" },
+      { "id": 3, "name": "Barkal" },
+      { "id": 4, "name": "Belaichhari" },
+      { "id": 5, "name": "Juraichhari" },
+      { "id": 6, "name": "Kaptai" },
+      { "id": 7, "name": "Kawkhali" },
+      { "id": 8, "name": "Langadu" },
+      { "id": 9, "name": "Naniyachar" },
+      { "id": 10, "name": "Rajasthali" }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Rangpur",
+    "upazilas": [
       { "id": 1, "name": "Rangpur Sadar" },
-      { "id": 2, "name": "Gangachhara" }
-  ]},
-  { "id": 57, "name": "Satkhira", "upazilas": [
+      { "id": 2, "name": "Gangachhara" },
+      { "id": 3, "name": "Badarganj" },
+      { "id": 4, "name": "Kaunia" },
+      { "id": 5, "name": "Mithapukur" },
+      { "id": 6, "name": "Pirgachha" },
+      { "id": 7, "name": "Pirganj" },
+      { "id": 8, "name": "Taraganj" }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Satkhira",
+    "upazilas": [
       { "id": 1, "name": "Satkhira Sadar" },
-      { "id": 2, "name": "Tala" }
-  ]},
-  { "id": 58, "name": "Shariatpur", "upazilas": [
+      { "id": 2, "name": "Tala" },
+      { "id": 3, "name": "Assasuni" },
+      { "id": 4, "name": "Debhata" },
+      { "id": 5, "name": "Kalaroa" },
+      { "id": 6, "name": "Kaliganj" },
+      { "id": 7, "name": "Shyamnagar" }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Shariatpur",
+    "upazilas": [
       { "id": 1, "name": "Shariatpur Sadar" },
-      { "id": 2, "name": "Naria" }
-  ]},
-  { "id": 59, "name": "Sherpur", "upazilas": [
+      { "id": 2, "name": "Naria" },
+      { "id": 3, "name": "Bhedarganj" },
+      { "id": 4, "name": "Damudya" },
+      { "id": 5, "name": "Gosairhat" },
+      { "id": 6, "name": "Zajira" }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Sherpur",
+    "upazilas": [
       { "id": 1, "name": "Sherpur Sadar" },
-      { "id": 2, "name": "Jhenaigati" }
-  ]},
-  { "id": 60, "name": "Sirajganj", "upazilas": [
+      { "id": 2, "name": "Jhenaigati" },
+      { "id": 3, "name": "Nakla" },
+      { "id": 4, "name": "Nalitabari" },
+      { "id": 5, "name": "Sreebardi" }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Sirajganj",
+    "upazilas": [
       { "id": 1, "name": "Sirajganj Sadar" },
-      { "id": 2, "name": "Ullapara" }
-  ]},
-  { "id": 61, "name": "Sunamganj", "upazilas": [
+      { "id": 2, "name": "Ullapara" },
+      { "id": 3, "name": "Belkuchi" },
+      { "id": 4, "name": "Chauhali" },
+      { "id": 5, "name": "Kamarkhanda" },
+      { "id": 6, "name": "Kazipur" },
+      { "id": 7, "name": "Raiganj" },
+      { "id": 8, "name": "Shahjadpur" },
+      { "id": 9, "name": "Tarash" }
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Sunamganj",
+    "upazilas": [
       { "id": 1, "name": "Sunamganj Sadar" },
-      { "id": 2, "name": "Chhatak" }
-  ]},
+      { "id": 2, "name": "Chhatak" },
+      { "id": 3, "name": "Bishwamaypur" },
+      { "id": 4, "name": "Derai" },
+      { "id": 5, "name": "Dharamapasha" },
+      { "id": 6, "name": "Dowarabazar" },
+      { "id": 7, "name": "Jagannathpur" },
+      { "id": 8, "name": "Jamalganj" },
+      { "id": 9, "name": "Sullah" },
+      { "id": 10, "name": "Tahirpur" },
+      { "id": 11, "name": "Shantiganj" }
+    ]
+  },
   { "id": 62, "name": "Sylhet", "upazilas": [
-      { "id": 1, "name": "Sylhet Sadar" },
-      { "id": 2, "name": "Beanibazar" }
+    { "id": 1, "name": "Sylhet Sadar" },
+    { "id": 2, "name": "Beanibazar" },
+    { "id": 3, "name": "Balaganj" },
+    { "id": 4, "name": "Bishwanath" },
+    { "id": 5, "name": "Fenchuganj" },
+    { "id": 6, "name": "Golapganj" },
+    { "id": 7, "name": "Gowainghat" },
+    { "id": 8, "name": "Jaintiapur" },
+    { "id": 9, "name": "Kanaighat" },
+    { "id": 10, "name": "Zakiganj" },
+    { "id": 11, "name": "Dakshin Surma" },
+    { "id": 12, "name": "Osmani Nagar" },
+    { "id": 13, "name": "Companiganj" }
   ]},
   { "id": 63, "name": "Tangail", "upazilas": [
-      { "id": 1, "name": "Tangail Sadar" },
-      { "id": 2, "name": "Mirzapur" }
+    { "id": 1, "name": "Tangail Sadar" },
+    { "id": 2, "name": "Mirzapur" },
+    { "id": 3, "name": "Basail" },
+    { "id": 4, "name": "Bhuapur" },
+    { "id": 5, "name": "Delduar" },
+    { "id": 6, "name": "Ghatail" },
+    { "id": 7, "name": "Gopalpur" },
+    { "id": 8, "name": "Kalihati" },
+    { "id": 9, "name": "Madhupur" },
+    { "id": 10, "name": "Nagarpur" },
+    { "id": 11, "name": "Sakhipur" },
+    { "id": 12, "name": "Dhanbari" }
   ]},
   { "id": 64, "name": "Thakurgaon", "upazilas": [
-      { "id": 1, "name": "Thakurgaon Sadar" },
-      { "id": 2, "name": "Pirganj" }
+    { "id": 1, "name": "Thakurgaon Sadar" },
+    { "id": 2, "name": "Pirganj" },
+    { "id": 3, "name": "Baliadangi" },
+    { "id": 4, "name": "Haripur" },
+    { "id": 5, "name": "Ranisankail" }
   ]}
 ]
