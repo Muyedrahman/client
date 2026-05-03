@@ -126,11 +126,13 @@ const AllUsers = () => {
                 <td className="py-3 px-4">{idx + 1}</td>
 
                 <td className="py-3 px-4">
+                  {/* avatar */}
                   <img
-                    src={user.avatar || "https://i.pravatar.cc/100"} //  avatar
+                    src={user.image || "https://i.pravatar.cc/100"} //  avatar
                     alt={user.name}
                     className="w-10 h-10 rounded-full object-cover"
                   />
+                  
                 </td>
 
                 <td className="py-3 px-4">{user.name}</td>
