@@ -122,15 +122,16 @@ import { MdDashboard } from "react-icons/md";
 
 // User Menu
 import MenuItem from "./Menu/MenuItem";
+import DonorMenu from "./Menu/DonorMenu";
 import AdminMenu from "./Menu/AdminMenu";
-import SellerMenu from "./Menu/SellerMenu";
-// import CustomerMenu from "./Menu/CustomerMenu";
+// import SellerMenu from "./Menu/SellerMenu";
+import VolunteerMenu from "./Menu/VolunteerMenu";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import useRole from "../../../hooks/useRole";
 import LoadingSpinner from "../../Shared/LoadingSpinner";
-import DonorMenu from "./Menu/DonorMenu";
-import VolunteerMenu from "./Menu/VolunteerMenu";
+
+
 
 const Sidebar = () => {
   const { setLoading } = useAuth();
@@ -142,7 +143,7 @@ const Sidebar = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/donation-requests?status=pending`
+          `${import.meta.env.VITE_API_URL}/donation-requests?status=pending`,
         );
         setRequests(res.data);
       } catch (error) {
@@ -211,28 +212,14 @@ if(isRoleLoading) return <LoadingSpinner></LoadingSpinner>
                 label="Dashboard"
                 address="/dashboard"
               />
-              {/* Admin  */}
-              {/* <MenuItem
-                icon={MdDashboard}
-                label="Dashboard"
-                address="/dashboard-admin"
-              /> */}
-              {/* Volunteer */}
-              {/* <MenuItem
-                icon={MdDashboard}
-                label="Dashboard"
-                address="/dashboard-volunteer"
-              /> */}
-              {/* Role-Based Menu */}
-              {/* {role === "donor" && <DonorMenu />}
-              {role === "volunteer" && <SellerMenu />}
-              {role === "admin" && <AdminMenu />} */}
-              {/* <CustomerMenu></CustomerMenu>
-              <SellerMenu></SellerMenu>
-              <AdminMenu/> */}
+              
+              
+      
               {role === "donor" && <DonorMenu />}
               {role === "volunteer" && <VolunteerMenu />}
-              {role === "admin" && <AdminMenu />}
+              {role === "admin" && <AdminMenu/>}
+
+
             </nav>
           </div>
 
