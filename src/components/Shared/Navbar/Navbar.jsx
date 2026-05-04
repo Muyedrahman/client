@@ -47,9 +47,9 @@ console.log(image)
           
           {/* RIGHT SIDE MAIN LINKS (Desktop Only) */}
           <div className='hidden md:flex items-center gap-6 text-base font-semibold'>
-            <Link to='/donation-request' className='hover:text-red-600 transition'>
+            {/* <Link to='/donation-request' className='hover:text-red-600 transition'>
               Donation Request
-            </Link>
+            </Link> */}
             <Link to='/search-page' className='hover:text-red-600 transition'>
               Search Page 
             </Link>

@@ -5,14 +5,14 @@ import SignUp from "../pages/SignUp/SignUp";
 import PlantDetails from "../pages/donation-details/DonationRequestDetails ";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
-import AddPlant from "../pages/Dashboard/Seller/AddPlant";
+// import AddPlant from "../pages/Dashboard/Seller/AddPlant";
 import ManageUsers from "../pages/Dashboard/Admin/AllUsers";
 import Profile from "../pages/Dashboard/Common/Profile";
 import Statistics from "../pages/Dashboard/Common/Statistics";
 import MainLayout from "../layouts/MainLayout";
 import ManageOrders from "../pages/Dashboard/Seller/ManageOrders";
 import { createBrowserRouter } from "react-router";
-import DonationRequest from "../components/Shared/MenuLinks/DonationRequest";
+
 import Blog from "../components/Shared/MenuLinks/Blog";
 import MyDonationRequest from "../pages/Dashboard/Customer/MyDonationRequest";
 import SearchPage from "../components/Shared/Navbar/SearchPage";
@@ -28,10 +28,8 @@ import EditDonationRequest from "../pages/Dashboard/Donor/EditDonationRequest";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import VolunteerRoute from "./VolunteerRoute";
 import AllBloodDonationRequests from "../pages/Dashboard/Admin/AllBloodDonationRequests";
-
-
-
-
+// +++
+import DonationRequest from "../components/Shared/MenuLinks/DonationRequest";
 
 
 
@@ -47,9 +45,18 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/donation-request",
-        element: <DonationRequest></DonationRequest>,
+        path: "donation-requests/:id",
+        element: (
+          <PrivateRoute>
+            {/* <DonationRequest /> */}
+            <DonationRequestDetails />
+          </PrivateRoute>
+        ),
       },
+      // {
+      //   path: "/donation-request",
+      //   element: <DonationRequest></DonationRequest>,
+      // },
       {
         path: "/search-page",
         element: <SearchPage></SearchPage>,
@@ -172,7 +179,8 @@ export const router = createBrowserRouter([
         path: "all-users",
         element: (
           <PrivateRoute>
-            <ManageUsers />
+            {/* <ManageUsers /> */}
+            <AllUsers />
           </PrivateRoute>
         ),
       },
@@ -203,16 +211,16 @@ export const router = createBrowserRouter([
         ),
       },
 
-      {
-        path: "all-AllUsers.jsx users",
-        element: (
-          <PrivateRoute>
-            <AdminRoute>
-              <AllUsers></AllUsers>
-            </AdminRoute>
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: "all-AllUsers.jsx users",
+      //   element: (
+      //     <PrivateRoute>
+      //       <AdminRoute>
+      //         <AllUsers></AllUsers>
+      //       </AdminRoute>
+      //     </PrivateRoute>
+      //   ),
+      // },
       //Volunteer Route
     ],
   },
