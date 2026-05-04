@@ -30,7 +30,7 @@ const MyDonationRequests = () => {
           }
         );
         setRequests(data);
-        setPage(1); // reset page when filter changes
+        setPage(1);  
       } catch (error) {
         console.error(error);
       } finally {
@@ -158,7 +158,7 @@ const MyDonationRequests = () => {
               disabled={page === 1}
               onClick={() => setPage(page - 1)}
             >
-              « Prev
+              - Prev
             </button>
 
             <span className="btn btn-sm btn-disabled">
@@ -170,7 +170,7 @@ const MyDonationRequests = () => {
               disabled={page === totalPages}
               onClick={() => setPage(page + 1)}
             >
-              Next »
+              Next --
             </button>
           </div>
         </div>

@@ -36,10 +36,7 @@ const PaymentSuccess = () => {
 
         setSaved(true);
         toast.success("Payment Successful ");
-
-        // setTimeout(() => {
-        //   navigate("/funding");
-        // }, 2000);
+ 
       } catch (err) {
         console.error(err);
         toast.error("Payment done but save failed");

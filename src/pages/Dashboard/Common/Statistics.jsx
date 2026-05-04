@@ -12,9 +12,6 @@ const Statistics = () => {
       {role === "volunteer" && <VolunteerHome />}
       {role === "admin" && <AdminHome />}
 
-      {/* {role === "donor" && <AdminStatistics />}
-      {role === "volunteer" && <AdminDashboard></AdminDashboard>}
-      {role === "admin" && <AdminDashboard></AdminDashboard>} */}
     </div>
   );
 };

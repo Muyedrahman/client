@@ -9,11 +9,11 @@ import { Link } from "react-router";
 const MyDonationRequests = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const [filter, setFilter] = useState(""); // pending | inprogress | done | canceled
+  const [filter, setFilter] = useState("");  
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // ✅ নিজের সব request load
+  //   request load
   const {
     data: requests = [],
     isLoading,
@@ -30,7 +30,7 @@ const MyDonationRequests = () => {
     },
   });
 
-  // ✅ Status Update (done / canceled)
+  //  Status Update done / canceled 
   const handleStatusUpdate = async (id, status) => {
     const result = await Swal.fire({
       title: "Are you sure?",
@@ -48,7 +48,7 @@ const MyDonationRequests = () => {
     }
   };
 
-  // ✅ Delete Request
+  //  Delete Request
   const handleDelete = async (id) => {
     const result = await Swal.fire({
       title: "Are you sure?",
@@ -66,7 +66,7 @@ const MyDonationRequests = () => {
     }
   };
 
-  // ✅ Pagination
+  //  Pagination
   const totalPages = Math.ceil(requests.length / itemsPerPage);
   const paginatedRequests = requests.slice(
     (currentPage - 1) * itemsPerPage,
@@ -89,17 +89,17 @@ const MyDonationRequests = () => {
       items-center gap-4 mb-6"
       >
         <h2 className="text-2xl font-medium text-red-700">
-          My Donation Requests 🩸
+          My Donation Requests  
         </h2>
 
-        {/* ✅ Filter Buttons */}
+        {/*   Filter Buttons */}
         <div className="flex flex-wrap gap-2">
           {["", "pending", "inprogress", "done", "canceled"].map((f) => (
             <button
               key={f}
               onClick={() => {
                 setFilter(f);
-                setCurrentPage(1); // filter পরিবর্তন হলে page 1 এ যাবে
+                setCurrentPage(1); 
               }}
               className={`px-4 py-2 rounded-lg text-xs font-medium 
               border transition-all
@@ -166,7 +166,7 @@ const MyDonationRequests = () => {
                   <StatusBadge status={req.status} />
                 </td>
 
-                {/* ✅ Donor Info - শুধু inprogress এ দেখাবে */}
+                {/*  Donor Info -> inprogress  seee */}
                 <td className="px-4 py-3 text-xs text-gray-500">
                   {req.status === "inprogress" ? (
                     <div>
@@ -183,7 +183,7 @@ const MyDonationRequests = () => {
                 {/* Action Buttons */}
                 <td className="px-4 py-3">
                   <div className="flex gap-1 flex-wrap">
-                    {/* ✅ inprogress হলে Done ও Cancel */}
+                    
                     {req.status === "inprogress" && (
                       <>
                         <button
@@ -205,7 +205,7 @@ const MyDonationRequests = () => {
                       </>
                     )}
 
-                    {/* ✅ Edit - pending এ */}
+                    {/*   Edit -> pending  */}
                     {req.status === "pending" && (
                       <Link
                         to={`/dashboard/edit-donation-request/${req._id}`}
@@ -216,7 +216,7 @@ const MyDonationRequests = () => {
                       </Link>
                     )}
 
-                    {/* ✅ Delete - pending এ */}
+                    {/*   Delete +> pending  a */}
                     {req.status === "pending" && (
                       <button
                         onClick={() => handleDelete(req._id)}
@@ -227,7 +227,7 @@ const MyDonationRequests = () => {
                       </button>
                     )}
 
-                    {/* ✅ View - সব অবস্থায় */}
+                    {/*  View  */}
                     <Link
                       to={`/donation-requests/${req._id}`}
                       className="bg-gray-100 hover:bg-gray-200
@@ -252,7 +252,7 @@ const MyDonationRequests = () => {
         </table>
       </div>
 
-      {/* ✅ Pagination */}
+      {/*   Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center gap-2 mt-6">
           {/* Prev */}
@@ -262,7 +262,7 @@ const MyDonationRequests = () => {
             className="px-4 py-2 rounded-lg border text-sm
             disabled:opacity-40 bg-white hover:bg-red-50"
           >
-            ← Prev
+            - Prev
           </button>
 
           {/* Page Numbers */}
@@ -296,7 +296,7 @@ const MyDonationRequests = () => {
   );
 };
 
-// ✅ Status Badge
+// Status Badge
 const StatusBadge = ({ status }) => {
   const styles = {
     pending: "bg-yellow-100 text-yellow-800",

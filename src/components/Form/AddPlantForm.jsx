@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query";
 import LoadingSpinner from "../Shared/LoadingSpinner";
 import { useEffect, useState } from "react";
-// import { useLoaderData } from "react-router";
+ 
 
 const AddPlantForm = () => {
   // const data = useLoaderData();

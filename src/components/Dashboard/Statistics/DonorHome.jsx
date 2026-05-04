@@ -8,7 +8,7 @@ const DonorHome = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
-  //  নিজের সর্বশেষ ৩টা request
+  //  last 3  request
   const { data: requests = [], isLoading } = useQuery({
     queryKey: ["my-recent-requests", user?.email],
     queryFn: async () => {
@@ -117,7 +117,7 @@ const StatusBadge = ({ status }) => {
 const ActionButtons = ({ req }) => {
   return (
     <div className="flex gap-2 flex-wrap">
-      {/* inprogress হলে Done ও Cancel দেখাবে */}
+      
       {req.status === "inprogress" && (
         <>
           <button
@@ -135,7 +135,7 @@ const ActionButtons = ({ req }) => {
         </>
       )}
 
-      {/* pending হলে Edit ও Delete দেখাবে */}
+       
       {req.status === "pending" && (
         <>
           <Link
@@ -154,7 +154,7 @@ const ActionButtons = ({ req }) => {
         </>
       )}
 
-      {/* সব অবস্থায় View দেখাবে */}
+      {/*   View   */}
       <Link
         to={`/dashboard/donation-details/${req._id}`}
         className="bg-gray-100 hover:bg-gray-200 text-gray-700 

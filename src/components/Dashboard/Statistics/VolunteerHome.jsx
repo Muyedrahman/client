@@ -30,7 +30,7 @@ const VolunteerHome = () => {
         </p>
       </div>
 
-      {/* Statistics Cards - Admin এর মতোই */}
+      {/* Statistics Cards ---> Admin   */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div
           className="bg-red-50 border border-red-100 

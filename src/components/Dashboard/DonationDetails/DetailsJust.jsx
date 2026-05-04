@@ -50,13 +50,7 @@ const navigate =useNavigate()
         <p className="mb-1"><strong>Date:</strong> {request.donationDate} | <strong>Time:</strong> {request.donationTime}</p>
         <p className="mb-3"><strong>Message:</strong> {request.requestMessage}</p>
 
-        {/* <button
-          disabled={isDonateDisabled}
-          className={`w-full px-4 py-2 rounded-md text-white transition
-            ${isDonateDisabled ? "bg-gray-400 cursor-not-allowed" : "bg-red-600 hover:bg-red-700"}`}
-        >
-          Donate
-        </button> */}
+      
          {/* Back button */}
           <button
             onClick={() => navigate(-1)}

@@ -10,13 +10,13 @@ const Funding = () => {
   const [amount, setAmount] = useState("");
   const [pageLoading, setPageLoading] = useState(true);
 
-  // 🔹 Load Funding History
+  //   Load Funding History
   useEffect(() => {
     const fetchFunds = async () => {
       if (!user) return;
 
       try {
-        const token = await user.getIdToken(); //  Firebase ID Token
+        const token = await user.getIdToken();  
 
         const { data } = await axios.get(
           `${import.meta.env.VITE_API_URL}/funds`,
@@ -39,7 +39,7 @@ const Funding = () => {
     fetchFunds();
   }, [user]);
 
-  // 🔹 Stripe Payment
+  //   Stripe Payment
   const handleGiveFund = async () => {
     if (!amount || amount < 1) {
       toast.error("Enter valid amount");
@@ -47,7 +47,7 @@ const Funding = () => {
     }
 
     try {
-      const token = await user.getIdToken(); //  Firebase token
+      const token = await user.getIdToken(); 
 
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/create-checkout-session`,

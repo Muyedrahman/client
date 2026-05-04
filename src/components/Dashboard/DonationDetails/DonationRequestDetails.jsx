@@ -62,7 +62,7 @@ const DonationRequestDetails = () => {
     }
   };
 
-  //  Update request (edit mode)
+  //  Update request  
  const handleUpdate = async () => {
   setUpdating(true);
   try {
@@ -260,7 +260,7 @@ const DonationRequestDetails = () => {
   );
 };
 
-/* 🔹 Reusable Components */
+/*  Reusable Components */
 
 const Field = ({ label, value, editable, onChange, textarea, type, fullWidth }) => {
   return (

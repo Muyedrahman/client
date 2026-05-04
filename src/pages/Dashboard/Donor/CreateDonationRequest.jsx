@@ -12,21 +12,21 @@ const CreateDonationRequest = () => {
   const [districts, setDistricts] = useState([]);
   const [upazilas, setUpazilas] = useState([]);
 
-  // ✅ একটাই JSON ফাইল লোড করো
+  // JSON 
   useEffect(() => {
     fetch("/Districts.json")
       .then((res) => res.json())
       .then((data) => setDistricts(data));
   }, []);
 
-  // ✅ District select হলে সেই district এর upazilas বের করো
+  // District select ---> upazilas  
   const handleDistrictChange = (e) => {
     const selectedId = parseInt(e.target.value);
     const found = districts.find((d) => d.id === selectedId);
     setUpazilas(found ? found.upazilas : []);
   };
 
-  // ✅ Form Submit
+  // Form Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -37,7 +37,7 @@ const CreateDonationRequest = () => {
       recipientName: form.recipientName.value,
       recipientDistrict:
         form.recipientDistrict.options[form.recipientDistrict.selectedIndex]
-          .text, // ✅ id না, name পাঠাবো
+          .text, 
       recipientUpazila: form.recipientUpazila.value,
       hospitalName: form.hospitalName.value,
       fullAddress: form.fullAddress.value,
@@ -77,7 +77,7 @@ const CreateDonationRequest = () => {
     <div className="p-6 bg-red-50 min-h-screen">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md">
         <h2 className="text-2xl font-medium text-red-700 mb-6 text-center">
-          Create Donation Request 🩸
+          Create Donation Request 
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -128,7 +128,7 @@ const CreateDonationRequest = () => {
 
           {/* District & Upazila */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* ✅ District */}
+            {/* District */}
             <div>
               <label className="text-sm text-gray-600 mb-1 block">
                 Recipient District
@@ -136,7 +136,7 @@ const CreateDonationRequest = () => {
               <select
                 name="recipientDistrict"
                 required
-                onChange={handleDistrictChange} // ✅
+                onChange={handleDistrictChange} 
                 className="w-full border px-4 py-2 rounded-lg 
                 focus:outline-none focus:border-red-400"
               >
@@ -149,7 +149,7 @@ const CreateDonationRequest = () => {
               </select>
             </div>
 
-            {/* ✅ Upazila */}
+            {/* Upazila */}
             <div>
               <label className="text-sm text-gray-600 mb-1 block">
                 Recipient Upazila
@@ -269,7 +269,7 @@ const CreateDonationRequest = () => {
             className="w-full bg-red-600 hover:bg-red-700 text-white 
             py-3 rounded-xl font-medium transition-all"
           >
-            Request Blood Donation 🩸
+            Request Blood Donation  
           </button>
         </form>
       </div>

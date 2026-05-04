@@ -15,17 +15,17 @@ const useAxiosSecure = () => {
 
   useEffect(() => {
     if (!loading && user) {
-      // ✅ Request Interceptor
+      //   Request Interceptor
       const requestInterceptor = axiosInstance.interceptors.request.use(
         async (config) => {
-          // ✅ getIdToken() → token expire হলে auto refresh করে
+          // getIdToken()  -->>> token expire --> auto refresh 
           const token = await user.getIdToken();
           config.headers.Authorization = `Bearer ${token}`;
           return config;
         },
       );
 
-      // ✅ Response Interceptor
+      //  Response Interceptor
       const responseInterceptor = axiosInstance.interceptors.response.use(
         (res) => res,
         (err) => {
@@ -39,7 +39,7 @@ const useAxiosSecure = () => {
         },
       );
 
-      // ✅ Cleanup - multiple interceptor থেকে বাঁচায়
+      //  Cleanup - multiple interceptor  
       return () => {
         axiosInstance.interceptors.request.eject(requestInterceptor);
         axiosInstance.interceptors.response.eject(responseInterceptor);
