@@ -15,11 +15,11 @@ const DonorMenu = () => {
         label="My Donation Requests"
         address="/dashboard/my-donation-requests"
       />
-      <MenuItem
+      {/* <MenuItem
         icon={FaEdit}
         label="Edit Donation Request"
         address="/dashboard/edit-donation-request/:id"
-      />
+      /> */}
       <MenuItem
         icon={BsCashStack}
         label="Funding"

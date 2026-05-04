@@ -12,7 +12,6 @@ import Statistics from "../pages/Dashboard/Common/Statistics";
 import MainLayout from "../layouts/MainLayout";
 import ManageOrders from "../pages/Dashboard/Seller/ManageOrders";
 import { createBrowserRouter } from "react-router";
-
 import Blog from "../components/Shared/MenuLinks/Blog";
 import MyDonationRequest from "../pages/Dashboard/Customer/MyDonationRequest";
 import SearchPage from "../components/Shared/Navbar/SearchPage";
@@ -24,7 +23,6 @@ import AdminRoute from "./AdminRoute";
 import Funding from "../pages/Dashboard/Common/Funding";
 import CreateDonationRequest from "../pages/Dashboard/Donor/CreateDonationRequest";
 import MyDonationRequests from "../pages/Dashboard/Donor/MyDonationRequests";
-import EditDonationRequest from "../pages/Dashboard/Donor/EditDonationRequest";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import VolunteerRoute from "./VolunteerRoute";
 import AllBloodDonationRequests from "../pages/Dashboard/Admin/AllBloodDonationRequests";
@@ -125,10 +123,10 @@ export const router = createBrowserRouter([
         path: "my-donation-requests",
         element: <MyDonationRequests />,
       },
-      {
-        path: "edit-donation-request/:id", //
-        element: <EditDonationRequest />,
-      },
+      // {
+      //   path: "edit-donation-request/:id", //
+      //   element: <EditDonationRequest />,
+      // },
       // Admin  Only
       {
         path: "all-users",
