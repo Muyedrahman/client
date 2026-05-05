@@ -2,6 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import LoadingSpinner from "../../Shared/LoadingSpinner";
+import { FaChessKing, FaDonate } from "react-icons/fa";
+import { FcManager } from "react-icons/fc";
+import { MdBloodtype } from "react-icons/md";
 
 const AdminHome = () => {
   const { user } = useAuth();
@@ -20,10 +23,10 @@ const AdminHome = () => {
 
   return (
     <div className="p-6">
-      {/* Welcome Section */}
+      {/* Welcome Section inline-flex items-center gap-2" */}
       <div className="mb-6">
-        <h2 className="text-2xl font-medium text-gray-800">
-          Welcome, {user?.displayName}! 👑
+        <h2 className="text-2xl font-medium text-gray-800 inline-flex items-center gap-2">
+          Welcome, {user?.displayName}! <FaChessKing />
         </h2>
         <p className="text-sm text-gray-500 mt-1">
           Manage everything from here
@@ -37,7 +40,9 @@ const AdminHome = () => {
           className="bg-red-50 border border-red-100 
         rounded-xl p-5 flex items-center gap-4"
         >
-          <div className="bg-red-100 p-3 rounded-full text-2xl">👤</div>
+          <div className="bg-red-100 p-3 rounded-full text-2xl">
+            <FcManager />
+          </div>
           <div>
             <p className="text-3xl font-medium text-gray-800">
               {stats.totalUsers || 0}
@@ -51,7 +56,9 @@ const AdminHome = () => {
           className="bg-green-50 border border-green-100 
         rounded-xl p-5 flex items-center gap-4"
         >
-          <div className="bg-green-100 p-3 rounded-full text-2xl">💰</div>
+          <div className="bg-green-100 p-3 rounded-full text-2xl">
+            <FaDonate />
+          </div>
           <div>
             <p className="text-3xl font-medium text-gray-800">
               ${stats.totalFunding || 0}
@@ -65,7 +72,10 @@ const AdminHome = () => {
           className="bg-blue-50 border border-blue-100 
         rounded-xl p-5 flex items-center gap-4"
         >
-          <div className="bg-blue-100 p-3 rounded-full text-2xl">🩸</div>
+          <div className="bg-blue-100 p-3 rounded-full text-2xl">
+             
+            <MdBloodtype />
+          </div>
           <div>
             <p className="text-3xl font-medium text-gray-800">
               {stats.totalRequests || 0}

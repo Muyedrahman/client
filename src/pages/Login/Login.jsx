@@ -23,9 +23,9 @@ if (user) return <Navigate to={from} replace={true} />;
   if (loading) return <LoadingSpinner></LoadingSpinner>;
 
 
-  // -------------------------
+
   // LOGIN FUNCTIONALITY
-  // -------------------------
+
   const onSubmit = async (data) => {
     try {
       const { email, password } = data;
@@ -33,7 +33,7 @@ if (user) return <Navigate to={from} replace={true} />;
 
       console.log("Login success:", result);
       toast.success("Login Successful ");
-      navigate("/"); // redirect after success
+      navigate("/");  
     } catch (err) {
       console.log(err);
       if (err.message.includes("auth/invalid-credential")) {

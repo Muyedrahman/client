@@ -10,7 +10,7 @@ const Home = () => {
       <FeaturedSection></FeaturedSection>
       <ContactUs></ContactUs>
    
-      {/* More components */}
+       
     </div>
   )
 }

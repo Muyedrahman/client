@@ -12,7 +12,7 @@ const DonationRequestDetails  = () => {
     donation_date: "2025-12-20",
     donation_time: "10:00 AM",
     request_message: "Urgent blood required for surgery",
-    status: "pending", // Change to 'inprogress', 'done', 'canceled' to test
+    status: "pending",  
     donor_name: "Sajib Hossain",
     donor_email: "sajib@example.com",
   };

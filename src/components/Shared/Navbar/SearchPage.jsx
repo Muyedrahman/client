@@ -1,60 +1,61 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import useAuth from "../../../hooks/useAuth";
-import { useLoaderData } from "react-router";
 
 const SearchPage = () => {
-  const { setLoading } = useAuth();
   const [bloodGroup, setBloodGroup] = useState("");
   const [district, setDistrict] = useState("");
   const [upazila, setUpazila] = useState("");
-  const [results, setResults] = useState([]);
-  const [requests, setRequests] = useState([]);
-  const data = useLoaderData();
 
-  // Blood groups
+  const [results, setResults] = useState([]);
+  const [districts, setDistricts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
-  // Fetch donation requests from backend
+  // Load districts
   useEffect(() => {
-    const fetchRequests = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/donation-requests?status=pending`
-        );
-        setRequests(res.data); // keep all requests for filtering
-        setResults([]); // start with empty results
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRequests();
+    fetch("/Districts.json")
+      .then((res) => res.json())
+      .then((data) => setDistricts(data))
+      .catch((err) => console.error("District load error:", err));
   }, []);
 
-  // Filter function
-  const handleSearch = (e) => {
+  // Search handler
+  const handleSearch = async (e) => {
     e.preventDefault();
-    const filtered = requests.filter(
-      (req) =>
-        (bloodGroup ? req.bloodGroup === bloodGroup : true) &&
-        (district ? req.district === district : true) &&
-        (upazila ? req.recipientUpazila === upazila : true)
-    );
-    setResults(filtered);
+
+    setLoading(true);
+    setResults([]);
+
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/donation-requests`,
+        {
+          params: {
+            blood_group: bloodGroup || undefined,
+            district: district || undefined,
+            upazila: upazila || undefined,
+            status: "pending",
+          },
+        },
+      );
+
+      setResults(res.data || []);
+    } catch (error) {
+      console.error("Search error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-red-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-red-700 mb-8">
           Find Blood Donors
         </h2>
 
-        {/* Search Form */}
+        {/* SEARCH FORM */}
         <form
           onSubmit={handleSearch}
           className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8"
@@ -63,7 +64,7 @@ const SearchPage = () => {
           <select
             value={bloodGroup}
             onChange={(e) => setBloodGroup(e.target.value)}
-            className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+            className="p-3 rounded-xl border"
           >
             <option value="">Blood Group</option>
             {bloodGroups.map((bg) => (
@@ -78,12 +79,12 @@ const SearchPage = () => {
             value={district}
             onChange={(e) => {
               setDistrict(e.target.value);
-              setUpazila(""); // reset upazila when district changes
+              setUpazila("");
             }}
-            className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+            className="p-3 rounded-xl border"
           >
             <option value="">District</option>
-            {data.map((d) => (
+            {districts.map((d) => (
               <option key={d.id} value={d.name}>
                 {d.name}
               </option>
@@ -94,77 +95,526 @@ const SearchPage = () => {
           <select
             value={upazila}
             onChange={(e) => setUpazila(e.target.value)}
-            className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+            className="p-3 rounded-xl border"
             disabled={!district}
           >
             <option value="">Upazila</option>
-            {data
+            {districts
               .find((d) => d.name === district)
-              ?.upazilas.map((u) => (
+              ?.upazilas?.map((u) => (
                 <option key={u.id} value={u.name}>
                   {u.name}
                 </option>
               ))}
           </select>
 
-          {/* Search Button */}
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transform transition py-3"
-          >
-            Search
-          </button>
+          {/* Button */}
+          <button className="bg-red-600 text-white rounded-xl">Search</button>
         </form>
 
-        {/* Results */}
-        {results.length === 0 ? (
-          <p className="text-center text-gray-500 text-lg">
-            No donors found. Fill the search form and click Search.
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {results.map((req) => (
-              <div
-                key={req._id}
-                className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-red-700">
-                      {req.requesterName}
-                    </h3>
-                    <p className="text-gray-500 text-sm">{req.requesterEmail}</p>
-                  </div>
-                  <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-full">
-                    {req.bloodGroup}
-                  </div>
-                </div>
-                <p className="text-gray-600">
-                  <span className="font-semibold">District:</span>{" "}
-                  {req.district || "N/A"}
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-semibold">Upazila:</span>{" "}
-                  {req.recipientUpazila || "N/A"}
-                </p>
-                <p className="text-gray-600 mt-2">
-                  <span className="font-semibold">Hospital:</span>{" "}
-                  {req.hospitalName || "N/A"}
-                </p>
-                <p className="text-gray-600 mt-2">
-                  <span className="font-semibold">Address:</span>{" "}
-                  {req.fullAddress || "N/A"}
-                </p>
-                <button className="mt-4 w-full bg-red-500 text-white rounded-xl py-2 font-semibold hover:bg-red-600 transition">
-                  Contact
-                </button>
-              </div>
-            ))}
-          </div>
+        {/* LOADING */}
+        {loading && (
+          <p className="text-center text-gray-500">Searching donors...</p>
         )}
+
+        {/* EMPTY STATE */}
+        {!loading && results.length === 0 && (
+          <p className="text-center text-gray-500">
+            No donors found. Try different filters.
+          </p>
+        )}
+
+        {/* RESULTS */}
+        <div className="grid md:grid-cols-3 gap-5">
+          {results.map((req) => (
+            <div
+              key={req._id}
+              className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition"
+            >
+              <h2 className="text-red-600 font-bold text-lg">
+                {req.requesterName || "Unknown"}
+              </h2>
+
+              <p>
+                <span className="font-semibold">Blood:</span> {req.blood_group}
+              </p>
+
+              <p>
+                <span className="font-semibold">District:</span>
+                {req.recipientDistrict}
+              </p>
+
+              <p>
+                <span className="font-semibold">Upazila:</span>
+                {req.recipientUpazila}
+              </p>
+
+              <p className="text-sm text-gray-500 mt-2">Status: {req.status}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
 export default SearchPage;
+
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+
+// const SearchPage = () => {
+//   const [bloodGroup, setBloodGroup] = useState("");
+//   const [district, setDistrict] = useState("");
+//   const [upazila, setUpazila] = useState("");
+//   const [results, setResults] = useState([]);
+//   const [districts, setDistricts] = useState([]);
+
+//   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
+
+//   useEffect(() => {
+//     fetch("/Districts.json")
+//       .then((res) => res.json())
+//       .then((data) => setDistricts(data));
+//   }, []);
+
+//   const handleSearch = async (e) => {
+//     e.preventDefault();
+
+//     const res = await axios.get(
+//       `${import.meta.env.VITE_API_URL}/donation-requests`,
+//       {
+//         params: {
+//           blood_group: bloodGroup,
+//           district,
+//           upazila,
+//           status: "pending",
+//         },
+//       },
+//     );
+
+//     setResults(res.data);
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-red-50 py-12 px-4">
+//       <div className="max-w-4xl mx-auto">
+//         <h2 className="text-4xl font-bold text-center text-red-700 mb-8">
+//           Find Blood Donors
+//         </h2>
+
+//         {/* FORM */}
+//         <form
+//           onSubmit={handleSearch}
+//           className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8"
+//         >
+//           <select
+//             value={bloodGroup}
+//             onChange={(e) => setBloodGroup(e.target.value)}
+//             className="p-3 rounded-xl border"
+//           >
+//             <option value="">Blood Group</option>
+//             {bloodGroups.map((bg) => (
+//               <option key={bg} value={bg}>
+//                 {bg}
+//               </option>
+//             ))}
+//           </select>
+
+//           <select
+//             value={district}
+//             onChange={(e) => {
+//               setDistrict(e.target.value);
+//               setUpazila("");
+//             }}
+//             className="p-3 rounded-xl border"
+//           >
+//             <option value="">District</option>
+//             {districts.map((d) => (
+//               <option key={d.id} value={d.name}>
+//                 {d.name}
+//               </option>
+//             ))}
+//           </select>
+
+//           <select
+//             value={upazila}
+//             onChange={(e) => setUpazila(e.target.value)}
+//             className="p-3 rounded-xl border"
+//           >
+//             <option value="">Upazila</option>
+//             {districts
+//               .find((d) => d.name === district)
+//               ?.upazilas.map((u) => (
+//                 <option key={u.id} value={u.name}>
+//                   {u.name}
+//                 </option>
+//               ))}
+//           </select>
+
+//           <button className="bg-red-600 text-white rounded-xl">Search</button>
+//         </form>
+
+//         {/* RESULTS */}
+//         <div className="grid md:grid-cols-3 gap-5">
+//           {results.map((req) => (
+//             <div key={req._id} className="bg-white p-4 rounded-xl shadow">
+//               <h2 className="text-red-600 font-bold">{req.requesterName}</h2>
+//               <p>{req.blood_group}</p>
+//               <p>{req.district}</p>
+//               <p>{req.upazila}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SearchPage;
+
+// clouddd
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+
+// const SearchPage = () => {
+//   const [bloodGroup, setBloodGroup] = useState("");
+//   const [district, setDistrict] = useState("");
+//   const [upazila, setUpazila] = useState("");
+//   const [results, setResults] = useState([]);
+//   const [requests, setRequests] = useState([]);
+//   const [districts, setDistricts] = useState([]); // ✅ JSON থেকে লোড
+
+//   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
+
+//   // ✅ Districts.json লোড
+//   useEffect(() => {
+//     fetch("/Districts.json")
+//       .then((res) => res.json())
+//       .then((data) => setDistricts(data));
+//   }, []);
+
+//   // ✅ Pending requests লোড
+//   useEffect(() => {
+//     const fetchRequests = async () => {
+//       try {
+//         const res = await axios.get(
+//           `${import.meta.env.VITE_API_URL}/donation-requests?status=pending`
+//         );
+//         setRequests(res.data);
+//       } catch (error) {
+//         console.error(error);
+//       }
+//     };
+//     fetchRequests();
+//   }, []);
+
+//   // ✅ Filter function
+//   const handleSearch = (e) => {
+//     e.preventDefault();
+//     const filtered = requests.filter(
+//       (req) =>
+//         (bloodGroup ? req.bloodGroup === bloodGroup : true) &&
+//         (district ? req.recipientDistrict === district : true) && // ✅ ঠিক করা
+//         (upazila ? req.recipientUpazila === upazila : true)
+//     );
+//     setResults(filtered);
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-red-50 py-12 px-4">
+//       <div className="max-w-4xl mx-auto">
+//         <h2 className="text-4xl font-bold text-center text-red-700 mb-8">
+//           Find Blood Donors
+//         </h2>
+
+//         {/* Search Form */}
+//         <form
+//           onSubmit={handleSearch}
+//           className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8"
+//         >
+//           {/* Blood Group */}
+//           <select
+//             value={bloodGroup}
+//             onChange={(e) => setBloodGroup(e.target.value)}
+//             className="p-3 rounded-xl border border-gray-300
+//             focus:outline-none focus:ring-2 focus:ring-red-300"
+//           >
+//             <option value="">Blood Group</option>
+//             {bloodGroups.map((bg) => (
+//               <option key={bg} value={bg}>{bg}</option>
+//             ))}
+//           </select>
+
+//           {/* ✅ District */}
+//           <select
+//             value={district}
+//             onChange={(e) => {
+//               setDistrict(e.target.value);
+//               setUpazila("");
+//             }}
+//             className="p-3 rounded-xl border border-gray-300
+//             focus:outline-none focus:ring-2 focus:ring-red-300"
+//           >
+//             <option value="">District</option>
+//             {districts.map((d) => (
+//               <option key={d.id} value={d.name}>{d.name}</option>
+//             ))}
+//           </select>
+
+//           {/* ✅ Upazila */}
+//           <select
+//             value={upazila}
+//             onChange={(e) => setUpazila(e.target.value)}
+//             className="p-3 rounded-xl border border-gray-300
+//             focus:outline-none focus:ring-2 focus:ring-red-300"
+//             disabled={!district}
+//           >
+//             <option value="">Upazila</option>
+//             {districts
+//               .find((d) => d.name === district)
+//               ?.upazilas.map((u) => (
+//                 <option key={u.id} value={u.name}>{u.name}</option>
+//               ))}
+//           </select>
+
+//           {/* Search Button */}
+//           <button
+//             type="submit"
+//             className="bg-red-600 hover:bg-red-700 text-white
+//             font-bold rounded-xl py-3 transition"
+//           >
+//             Search
+//           </button>
+//         </form>
+
+//         {/* Results */}
+//         {results.length === 0 ? (
+//           <p className="text-center text-gray-500 text-lg">
+//             No donors found. Fill the search form and click Search.
+//           </p>
+//         ) : (
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//             {results.map((req) => (
+//               <div
+//                 key={req._id}
+//                 className="bg-white p-6 rounded-3xl shadow-lg
+//                 hover:shadow-2xl transition"
+//               >
+//                 <div className="flex items-center justify-between mb-4">
+//                   <div>
+//                     <h3 className="text-xl font-medium text-red-700">
+//                       {req.requesterName}
+//                     </h3>
+//                     <p className="text-gray-500 text-sm">
+//                       {req.requesterEmail}
+//                     </p>
+//                   </div>
+//                   <div className="bg-red-100 text-red-700 font-bold
+//                   px-3 py-1 rounded-full">
+//                     {req.bloodGroup}
+//                   </div>
+//                 </div>
+
+//                 <p className="text-gray-600">
+//                   <span className="font-medium">District:</span>{" "}
+//                   {req.recipientDistrict || "N/A"} {/* ✅ */}
+//                 </p>
+//                 <p className="text-gray-600">
+//                   <span className="font-medium">Upazila:</span>{" "}
+//                   {req.recipientUpazila || "N/A"}
+//                 </p>
+//                 <p className="text-gray-600 mt-2">
+//                   <span className="font-medium">Hospital:</span>{" "}
+//                   {req.hospitalName || "N/A"}
+//                 </p>
+//                 <p className="text-gray-600 mt-2">
+//                   <span className="font-medium">Address:</span>{" "}
+//                   {req.fullAddress || "N/A"}
+//                 </p>
+
+//                 <button className="mt-4 w-full bg-red-500 text-white
+//                 rounded-xl py-2 font-medium hover:bg-red-600 transition">
+//                   Contact
+//                 </button>
+//               </div>
+//             ))}
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SearchPage;
+
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+// import useAuth from "../../../hooks/useAuth";
+// import { useLoaderData } from "react-router";
+
+// const SearchPage = () => {
+//   const { setLoading } = useAuth();
+//   const [bloodGroup, setBloodGroup] = useState("");
+//   const [district, setDistrict] = useState("");
+//   const [upazila, setUpazila] = useState("");
+//   const [results, setResults] = useState([]);
+//   const [requests, setRequests] = useState([]);
+//   const data = useLoaderData();
+
+//   // Blood groups
+//   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
+
+//   // Fetch donation requests from backend
+//   useEffect(() => {
+//     const fetchRequests = async () => {
+//       setLoading(true);
+//       try {
+//         const res = await axios.get(
+//           `${import.meta.env.VITE_API_URL}/donation-requests?status=pending`
+//         );
+//         setRequests(res.data); // keep all requests for filtering
+//         setResults([]); // start with empty results
+//       } catch (error) {
+//         console.error(error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchRequests();
+//   }, []);
+
+//   // Filter function
+//   const handleSearch = (e) => {
+//     e.preventDefault();
+//     const filtered = requests.filter(
+//       (req) =>
+//         (bloodGroup ? req.bloodGroup === bloodGroup : true) &&
+//         (district ? req.district === district : true) &&
+//         (upazila ? req.recipientUpazila === upazila : true)
+//     );
+//     setResults(filtered);
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-red-50 py-12 px-4">
+//       <div className="max-w-4xl mx-auto">
+//         <h2 className="text-4xl font-bold text-center text-red-700 mb-8">
+//           Find Blood Donors
+//         </h2>
+
+//         {/* Search Form */}
+//         <form
+//           onSubmit={handleSearch}
+//           className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8"
+//         >
+//           {/* Blood Group */}
+//           <select
+//             value={bloodGroup}
+//             onChange={(e) => setBloodGroup(e.target.value)}
+//             className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+//           >
+//             <option value="">Blood Group</option>
+//             {bloodGroups.map((bg) => (
+//               <option key={bg} value={bg}>
+//                 {bg}
+//               </option>
+//             ))}
+//           </select>
+
+//           {/* District */}
+//           <select
+//             value={district}
+//             onChange={(e) => {
+//               setDistrict(e.target.value);
+//               setUpazila(""); // reset upazila when district changes
+//             }}
+//             className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+//           >
+//             <option value="">District</option>
+//             {data.map((d) => (
+//               <option key={d.id} value={d.name}>
+//                 {d.name}
+//               </option>
+//             ))}
+//           </select>
+
+//           {/* Upazila */}
+//           <select
+//             value={upazila}
+//             onChange={(e) => setUpazila(e.target.value)}
+//             className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+//             disabled={!district}
+//           >
+//             <option value="">Upazila</option>
+//             {data
+//               .find((d) => d.name === district)
+//               ?.upazilas.map((u) => (
+//                 <option key={u.id} value={u.name}>
+//                   {u.name}
+//                 </option>
+//               ))}
+//           </select>
+
+//           {/* Search Button */}
+//           <button
+//             type="submit"
+//             className="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transform transition py-3"
+//           >
+//             Search
+//           </button>
+//         </form>
+
+//         {/* Results */}
+//         {results.length === 0 ? (
+//           <p className="text-center text-gray-500 text-lg">
+//             No donors found. Fill the search form and click Search.
+//           </p>
+//         ) : (
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//             {results.map((req) => (
+//               <div
+//                 key={req._id}
+//                 className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition"
+//               >
+//                 <div className="flex items-center justify-between mb-4">
+//                   <div>
+//                     <h3 className="text-xl font-semibold text-red-700">
+//                       {req.requesterName}
+//                     </h3>
+//                     <p className="text-gray-500 text-sm">{req.requesterEmail}</p>
+//                   </div>
+//                   <div className="bg-red-100 text-red-700 font-bold px-3 py-1 rounded-full">
+//                     {req.bloodGroup}
+//                   </div>
+//                 </div>
+//                 <p className="text-gray-600">
+//                   <span className="font-semibold">District:</span>{" "}
+//                   {req.district || "N/A"}
+//                 </p>
+//                 <p className="text-gray-600">
+//                   <span className="font-semibold">Upazila:</span>{" "}
+//                   {req.recipientUpazila || "N/A"}
+//                 </p>
+//                 <p className="text-gray-600 mt-2">
+//                   <span className="font-semibold">Hospital:</span>{" "}
+//                   {req.hospitalName || "N/A"}
+//                 </p>
+//                 <p className="text-gray-600 mt-2">
+//                   <span className="font-semibold">Address:</span>{" "}
+//                   {req.fullAddress || "N/A"}
+//                 </p>
+//                 <button className="mt-4 w-full bg-red-500 text-white rounded-xl py-2 font-semibold hover:bg-red-600 transition">
+//                   Contact
+//                 </button>
+//               </div>
+//             ))}
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SearchPage;

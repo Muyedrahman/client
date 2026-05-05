@@ -1,8 +1,7 @@
 import { Link, useLoaderData, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
-import toast from "react-hot-toast";
-// import { imageUploadCloudinary } from "../../utils";
+import toast from "react-hot-toast"; 
 import axios from "axios";
 import LoadingSpinner from './../../components/Shared/LoadingSpinner';
 import { imageUpload } from "../../utils";
@@ -37,11 +36,7 @@ const SignUp = () => {
       data;
 
     const imageFile = image[0];
-    // const imageFile = image?.[0];
-    // const formData = new FormData()
-    // formData.append('image', imageFile)
-    // console.log(formData)
-    
+     
     try {
       // data
       // const res = await axios.post(
@@ -133,7 +128,7 @@ const SignUp = () => {
             <p className="text-red-600">{errors.email.message}</p>
           )}
 
-          {/* Avatar (Image Upload) */}
+          {/* Avatar  Image Upload  */}
           <input
             type="file"
             placeholder="Enter Your"

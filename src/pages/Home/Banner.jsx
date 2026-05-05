@@ -12,7 +12,7 @@ const Banner = () => {
         </h1>
 
         <p className="mt-4 text-gray-600 text-lg md:text-xl">
-          Join our community of life-savers. Your little help can change someone’s life.
+          Join our community of life-savers. Your little help can change someone's life.
         </p>
 
         {/* Buttons */}
@@ -27,7 +27,7 @@ const Banner = () => {
             Join as a Donor
           </Link>
 
-          {/* Search Donors (Border Animation + Scale) */}
+          {/* Search Donors   */}
           <Link
             to="/search-page"
             className="relative border border-red-600 text-red-600 font-semibold px-8 py-3 rounded-full 
